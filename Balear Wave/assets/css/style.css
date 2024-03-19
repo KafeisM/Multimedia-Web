@@ -1073,8 +1073,8 @@ section .container {
 }
 
 .news-item img {
-  width: 350px; /* Ajusta el ancho de la imagen según sea necesario */
-  height: auto;
+  width: 300px; /* Ajusta el ancho de la imagen según sea necesario */
+  height: 300px;
   object-fit: cover;
   border-radius: 8px 8px 8px 8px; /* Añade bordes redondeados solo en la esquina superior izquierda y en la inferior izquierda */
 }
