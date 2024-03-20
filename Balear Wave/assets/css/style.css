@@ -146,6 +146,10 @@ h6 {
     flex-direction: column;
     align-items: center;
   }
+
+  #header img {
+    display: none;
+  }
 }
 
 /* Header Top */
@@ -969,12 +973,10 @@ section .container {
   border: 1px solid #eee;
   border-radius: 8px;
 }
-
+/* Estilos generales */
 .novetats-item img {
-  width: 300px; /* Ajusta el ancho de la imagen según sea necesario */
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px 8px 8px 8px; /* Añade bordes redondeados solo en la esquina superior izquierda y en la inferior izquierda */
+  max-width: 100%; /* Hacer que las imágenes sean responsivas */
+  height: auto;
 }
 
 .novetats-content {
@@ -993,6 +995,34 @@ section .container {
   color: #ffffff;
   margin-bottom: 20px;
 }
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1200px) {
+  .novetats-item {
+    flex-direction: column; /* Cambiar la dirección de los elementos en pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1200px) {
+  .novetats-item {
+    margin-bottom: 40px; /* Aumenta el espacio entre los elementos */
+  }
+
+  .novetats-content h3 {
+    font-size: 36px; /* Aumenta el tamaño del título */
+  }
+
+  .novetats-content p {
+    font-size: 22px; /* Aumenta el tamaño del texto */
+  }
+
+  .novetats-item img {
+    width: 350px; /* Hacer que las imágenes sean responsivas */
+    height: 350px;
+  }
+}
+
 
 
 /*--------------------------------------------------------------
