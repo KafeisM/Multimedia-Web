@@ -1277,6 +1277,10 @@ section .container {
   color: #fff;
 }
 
+.card-body p.card-text {
+  margin-bottom: 15px; /* separacio boto i text */
+}
+
 /*--------------------------------------------------------------
 # Buscador artistes
 --------------------------------------------------------------*/
@@ -1357,6 +1361,10 @@ section .container {
   margin-right: 0;
 }
 
+/*--------------------------------------------------------------
+# Estil botó generic
+--------------------------------------------------------------*/
+
 /* Estilo personalizado para el botón "Veure més" */
 .btn-custom {
   background-color: #18d26e; /* Color de fondo personalizado */
@@ -1372,6 +1380,7 @@ section .container {
   background-color: #35e888; /* Cambiar el color de fondo al pasar el mouse */
   color: #fff; /* Cambiar el color del texto al pasar el mouse */
 }
+
 
 
 /*--------------------------------------------------------------
