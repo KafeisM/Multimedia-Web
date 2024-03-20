@@ -1367,7 +1367,7 @@ section .container {
 
 /* Estilo personalizado para el botón "Veure més" */
 .btn-custom {
-  background-color: #18d26e; /* Color de fondo personalizado */
+  background-color: rgba(255, 255, 255, 0.1); /* Color de fondo personalizado */
   color: #fff; /* Color de texto personalizado */
   border: 2px solid #18d26e; /* Borde personalizado */
   padding: 10px 20px; /* Padding personalizado */
@@ -1378,7 +1378,7 @@ section .container {
 
 .btn-custom:hover {
   background-color: #35e888; /* Cambiar el color de fondo al pasar el mouse */
-  color: #fff; /* Cambiar el color del texto al pasar el mouse */
+  color: #000000; /* Cambiar el color del texto al pasar el mouse */
 }
 
 
