@@ -310,4 +310,22 @@ window.addEventListener('load', () => {
    */
   new PureCounter();
 
+  document.addEventListener('DOMContentLoaded', function() {
+    var botonMapa = document.querySelector('#events-flters li');
+    var imagenContainer = document.querySelector('#imagenContainer');
+
+    botonMapa.addEventListener('click', function() {
+        toggleImageVisibility();
+    });
+
+    function toggleImageVisibility() {
+        if (imagenContainer.style.display === 'none') {
+            imagenContainer.style.display = 'block';
+        } else {
+            imagenContainer.style.display = 'none';
+        }
+    }
+});
+
+
 })()
