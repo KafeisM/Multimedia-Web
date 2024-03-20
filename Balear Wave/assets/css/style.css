@@ -1299,7 +1299,7 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Buscador
+# Buscador artistes
 --------------------------------------------------------------*/
 
 /* Estilo para el contenedor de búsqueda */
@@ -1335,4 +1335,42 @@ section .container {
 
 .search-container button:hover {
   background-color: #18d26e;
+}
+
+/*--------------------------------------------------------------
+# Filtros artistes
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Filtros artistes
+--------------------------------------------------------------*/
+
+/* Estilo para el contenedor de los filtros */
+.artist-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #040404; /* color de fondo del contenedor */
+}
+
+/* Estilo para cada filtro */
+.artist-filter {
+  padding: 10px 20px;
+  margin-right: 10px;
+  background-color: #18d26e; /* color de fondo del filtro */
+  color: #fff; /* color del texto del filtro */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo para el filtro activo */
+.artist-filter.active {
+  background-color: #35e888; /* color de fondo del filtro activo */
+}
+
+/* Estilo para el filtro al pasar el mouse */
+.artist-filter:hover {
+  background-color: #35e888; /* color de fondo del filtro al pasar el mouse */
 }
