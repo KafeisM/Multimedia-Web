@@ -1357,5 +1357,22 @@ section .container {
   margin-right: 0;
 }
 
+/* Estilo personalizado para el botón "Veure més" */
+.btn-custom {
+  background-color: #18d26e; /* Color de fondo personalizado */
+  color: #fff; /* Color de texto personalizado */
+  border: 2px solid #18d26e; /* Borde personalizado */
+  padding: 10px 20px; /* Padding personalizado */
+  text-decoration: none; /* Quitar subrayado del enlace */
+  border-radius: 5px; /* Bordes redondeados */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.btn-custom:hover {
+  background-color: #35e888; /* Cambiar el color de fondo al pasar el mouse */
+  color: #fff; /* Cambiar el color del texto al pasar el mouse */
+}
+
+
 
 

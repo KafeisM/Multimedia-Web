@@ -214,8 +214,8 @@
 });
 
 /**
-   * asrtistes filter
-   */
+* asrtistes filtros
+*/
 window.addEventListener('load', () => {
   let artistesContainer = document.querySelector('.artistes-container');
   if (artistesContainer) {
@@ -242,7 +242,35 @@ window.addEventListener('load', () => {
   }
 });
 
+/**
+* asrtistes cercador
+*/
+window.addEventListener('load', () => {
+  // Función para filtrar artistas según el término de búsqueda
+  function filterArtists() {
+      let searchTerm = document.getElementById('artist-search').value.toLowerCase();
+      let artistes = document.querySelectorAll('.artistes-container .col-md-4');
 
+      artistes.forEach((artista) => {
+          let nombreArtista = artista.querySelector('.card-title').textContent.toLowerCase();
+          if (nombreArtista.includes(searchTerm)) {
+              artista.style.display = 'block'; // Mostrar el artista si coincide con el término de búsqueda
+          } else {
+              artista.style.display = 'none'; // Ocultar el artista si no coincide con el término de búsqueda
+          }
+      });
+  }
+
+  // Event listener para el botón de búsqueda
+  document.getElementById('search-button').addEventListener('click', filterArtists);
+  
+  // Event listener para la tecla "Enter" en el campo de búsqueda
+  document.getElementById('artist-search').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+          filterArtists();
+      }
+  });
+});
 
   /**
    * Initiate portfolio lightbox 
