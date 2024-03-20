@@ -1015,19 +1015,14 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# news
+# Novetats
 --------------------------------------------------------------*/
 
-.news {
+.novetats {
   padding: 80px 0;
 }
 
-.row #news-container {
-  display: flex;
-  flex-direction: column; /* Coloca las noticias una encima de otra */
-}
-
-.news #portfolio-flters {
+.novetats #novetats-flters {
   padding: 0;
   margin: 0 auto 15px auto;
   list-style: none;
@@ -1036,7 +1031,7 @@ section .container {
   padding: 2px 15px;
 }
 
-.news #portfolio-flters li {
+.novetats #novetats-flters li {
   cursor: pointer;
   display: inline-block;
   padding: 8px 16px 10px 16px;
@@ -1051,20 +1046,16 @@ section .container {
   border-radius: 4px;
 }
 
-.news #portfolio-flters li:hover,
-.news #portfolio-flters li.filter-active {
+.novetats #novetats-flters li:hover,
+.novetats #novetats-flters li.filter-active {
   background: #18d26e;
 }
 
-.news #portfolio-flters li:last-child {
+.novetats #novetats-flters li:last-child {
   margin-right: 0;
 }
 
-.news .row {
-  margin-top: 30px;
-}
-
-.news-item {
+.novetats-item {
   display: flex;
   flex-direction: row; /* Alinea los elementos de la noticia en una fila */
   margin-bottom: 20px; /* Espacio entre las noticias */
@@ -1072,40 +1063,28 @@ section .container {
   border-radius: 8px;
 }
 
-.news-item img {
+.novetats-item img {
   width: 300px; /* Ajusta el ancho de la imagen según sea necesario */
   height: 300px;
   object-fit: cover;
   border-radius: 8px 8px 8px 8px; /* Añade bordes redondeados solo en la esquina superior izquierda y en la inferior izquierda */
 }
 
-.news-content {
+.novetats-content {
   flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
   padding: 20px;
 }
 
-.news-content h3 {
-  font-size: 20px;
+.novetats-content h3 {
+  font-size: 30px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.news-content p {
-  font-size: 16px;
-  color: #666;
+.novetats-content p {
+  font-size: 20px;
+  color: #ffffff;
   margin-bottom: 20px;
-}
-
-.news-content .btn {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-.news-content .btn:hover {
-  background-color: #18d26e;
 }
 
 
