@@ -35,6 +35,7 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  
 </head>
 
 <body>
@@ -54,7 +55,7 @@
         <ul>
           <li><a class="nav-link active" href="#header">Inici</a></li>
           <li><a class="nav-link" href="#resume">Events</a></li>
-          <li><a class="nav-link" href="#services">Artistes</a></li>
+          <li><a class="nav-link" href="#artistes">Artistes</a></li>
           <li><a class="nav-link" href="#novetats">Novetats</a></li>
           <li><a class="nav-link" href="#about">Sobre nosaltres</a></li>
           <li><a class="nav-link" href="#contact">Contacte</a></li>
@@ -510,7 +511,7 @@
 
 
   <!-- ======= Artistes ======= -->
-  <section id="services" class="services">
+  <section id="artistes" class="artistes">
     <div class="container mt-5">
 
       <div class="section-title">
@@ -520,9 +521,36 @@
 
       <div class="search-container">
         <input type="text" placeholder="Nom artista...">
-        <button type="submit">Cercar</button>
+        <button type="submit">CERCAR</button>
       </div>
 
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="artist-filters">
+                <li data-filter="*" class="filter-active">Tot</li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cançons</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" data-filter=".filter-rock" href="#">Rock</a>
+                        <a class="dropdown-item" data-filter=".filter-pop" href="#">Pop</a>
+                        <!-- Agrega más opciones si es necesario -->
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artistes</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" data-filter=".filter-solistas" href="#">Solistas</a>
+                        <a class="dropdown-item" data-filter=".filter-bandas" href="#">Bandas</a>
+                        <!-- Agrega más opciones si es necesario -->
+                    </div>
+                </li>
+                <li data-filter=".filter-concerts">Concerts</li>
+                <li data-filter=".filter-altres">Altres</li>
+            </ul>
+        </div>
+      </div>
+    
+    
       <div class="row">
         <!-- Artista 1 -->
         <div class="col-md-4 mb-4">

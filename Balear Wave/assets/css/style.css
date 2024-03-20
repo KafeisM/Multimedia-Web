@@ -692,99 +692,6 @@ section .container {
 }
 
 /*--------------------------------------------------------------
-# Artistes
---------------------------------------------------------------*/
-.services .icon-box {
-  text-align: center;
-  padding: 80px 20px;
-  transition: all ease-in-out 0.3s;
-  position: relative; /* Añadido para permitir posicionamiento absoluto del fondo */
-}
-
-.services .icon-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.8; /* Opacidad del fondo */
-  z-index: -1; /* Asegura que esté detrás del contenido */
-  border-radius: 5px; /* Ajustar según sea necesario */
-}
-
-
-.services .icon-box .icon {
-  margin: 0 auto;
-  width: 64px;
-  height: 64px;
-  background: #18d26e;
-  border-radius: 5px;
-  transition: all 0.3s ease-out 0s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  transform-style: preserve-3d;
-}
-
-.services .icon-box .icon i {
-  color: #fff;
-  font-size: 28px;
-}
-
-.services .icon-box .icon::before {
-  position: absolute;
-  content: "";
-  left: -8px;
-  top: -8px;
-  height: 100%;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 5px;
-  transition: all 0.3s ease-out 0s;
-  transform: translateZ(-1px);
-}
-
-.services .icon-box h4 {
-  font-weight: 700;
-  margin-bottom: 15px;
-  font-size: 24px;
-}
-
-.services .icon-box h4 a {
-  color: #fff;
-}
-
-.services .icon-box p {
-  line-height: 24px;
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.services .icon-box:hover {
-  background: #18d26e;
-  border-color: #18d26e;
-}
-
-.services .icon-box:hover .icon {
-  background: #fff;
-}
-
-.services .icon-box:hover .icon i {
-  color: #18d26e;
-}
-
-.services .icon-box:hover .icon::before {
-  background: #35e888;
-}
-
-.services .icon-box:hover h4 a,
-.services .icon-box:hover p {
-  color: #fff;
-}
-
-/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
 .portfolio .portfolio-item {
@@ -1278,9 +1185,103 @@ section .container {
 }
 
 /*--------------------------------------------------------------
+# Artistes
+--------------------------------------------------------------*/
+.artistes .icon-box {
+  text-align: center;
+  padding: 80px 20px;
+  transition: all ease-in-out 0.3s;
+  position: relative; /* Añadido para permitir posicionamiento absoluto del fondo */
+}
+
+.artistes .icon-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8; /* Opacidad del fondo */
+  z-index: -1; /* Asegura que esté detrás del contenido */
+  border-radius: 5px; /* Ajustar según sea necesario */
+}
+
+
+.artistes .icon-box .icon {
+  margin: 0 auto;
+  width: 64px;
+  height: 64px;
+  background: #18d26e;
+  border-radius: 5px;
+  transition: all 0.3s ease-out 0s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  transform-style: preserve-3d;
+}
+
+.artistes .icon-box .icon i {
+  color: #fff;
+  font-size: 28px;
+}
+
+.artistes .icon-box .icon::before {
+  position: absolute;
+  content: "";
+  left: -8px;
+  top: -8px;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 5px;
+  transition: all 0.3s ease-out 0s;
+  transform: translateZ(-1px);
+}
+
+.artistes .icon-box h4 {
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 24px;
+}
+
+.artistes .icon-box h4 a {
+  color: #fff;
+}
+
+.artistes .icon-box p {
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.artistes .icon-box:hover {
+  background: #18d26e;
+  border-color: #18d26e;
+}
+
+.artistes .icon-box:hover .icon {
+  background: #fff;
+}
+
+.artistes .icon-box:hover .icon i {
+  color: #18d26e;
+}
+
+.artistes .icon-box:hover .icon::before {
+  background: #35e888;
+}
+
+.artistes .icon-box:hover h4 a,
+.artistes .icon-box:hover p {
+  color: #fff;
+}
+
+/*--------------------------------------------------------------
 # Buscador artistes
 --------------------------------------------------------------*/
 
+/* Estilo para el contenedor de búsqueda */
 /* Estilo para el contenedor de búsqueda */
 .search-container {
   margin: 50px auto;
@@ -1288,27 +1289,29 @@ section .container {
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.15);
+  display: flex; /* Mostrar los elementos dentro del contenedor como flexbox */
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: center; /* Centrar verticalmente los elementos */
 }
 
 /* Estilo para el campo de entrada de texto */
 .search-container input[type=text] {
-  width: 75%;
+  flex: 1; /* Hacer que el campo de texto ocupe el espacio restante */
   padding: 15px;
-  margin: 5px 0 22px 0;
+  margin-right: 10px; /* Agregar espacio a la derecha del campo de texto */
   border: none;
+  border-radius: 5px; /* Añadir borde redondeado */
   background: #f1f1f1;
 }
 
 /* Estilo para el botón de búsqueda */
 .search-container button {
-  width: 20%;
-  padding: 15px;
+  padding: 15px 20px; /* Ajustar el espaciado interno del botón */
   border-radius: 5px;
-  background-color: #040404;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: none;
   cursor: pointer;
-  text-align: center;
   transition: ease-in-out 0.3s;
 }
 
@@ -1316,40 +1319,44 @@ section .container {
   background-color: #18d26e;
 }
 
-/*--------------------------------------------------------------
-# Filtros artistes
---------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Filtros artistes
 --------------------------------------------------------------*/
 
-/* Estilo para el contenedor de los filtros */
-.artist-filter-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  background-color: #040404; /* color de fondo del contenedor */
+#artist-filters {
+  padding: 0;
+  margin: 0 auto 15px auto;
+  list-style: none;
+  text-align: center;
+  border-radius: 50px;
+  padding: 2px 15px;
 }
 
-/* Estilo para cada filtro */
-.artist-filter {
-  padding: 10px 20px;
-  margin-right: 10px;
-  background-color: #18d26e; /* color de fondo del filtro */
-  color: #fff; /* color del texto del filtro */
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+#artist-filters li {
+  cursor: pointer;
+  display: inline-block;
+  padding: 8px 16px 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0 3px 10px 3px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
 }
 
-/* Estilo para el filtro activo */
-.artist-filter.active {
-  background-color: #35e888; /* color de fondo del filtro activo */
+#artist-filters li:hover,
+#artist-filters li.filter-active {
+  background: #18d26e;
 }
 
-/* Estilo para el filtro al pasar el mouse */
-.artist-filter:hover {
-  background-color: #35e888; /* color de fondo del filtro al pasar el mouse */
+#artist-filters li:last-child {
+  margin-right: 0;
 }
+
+
+
+
