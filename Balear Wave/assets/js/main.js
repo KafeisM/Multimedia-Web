@@ -213,6 +213,36 @@
     }
 });
 
+/**
+   * asrtistes filter
+   */
+window.addEventListener('load', () => {
+  let artistesContainer = document.querySelector('.artistes-container');
+  if (artistesContainer) {
+      let artistesIsotope = new Isotope(artistesContainer, {
+          itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
+          layoutMode: 'fitRows'
+      });
+
+      let artistesFilters = document.querySelectorAll('#artistes-flters li');
+
+      artistesFilters.forEach((filter) => {
+          filter.addEventListener('click', function(e) {
+              e.preventDefault();
+              artistesFilters.forEach((el) => {
+                  el.classList.remove('filter-active');
+              });
+              this.classList.add('filter-active');
+
+              artistesIsotope.arrange({
+                  filter: this.getAttribute('data-filter')
+              });
+          });
+      });
+  }
+});
+
+
 
   /**
    * Initiate portfolio lightbox 

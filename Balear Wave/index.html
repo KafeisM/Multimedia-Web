@@ -526,34 +526,18 @@
 
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="artist-filters">
-                <li data-filter="*" class="filter-active">Tot</li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cançons</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" data-filter=".filter-rock" href="#">Rock</a>
-                        <a class="dropdown-item" data-filter=".filter-pop" href="#">Pop</a>
-                        <!-- Agrega más opciones si es necesario -->
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Artistes</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" data-filter=".filter-solistas" href="#">Solistas</a>
-                        <a class="dropdown-item" data-filter=".filter-bandas" href="#">Bandas</a>
-                        <!-- Agrega más opciones si es necesario -->
-                    </div>
-                </li>
-                <li data-filter=".filter-concerts">Concerts</li>
-                <li data-filter=".filter-altres">Altres</li>
-            </ul>
+          <ul id="artistes-flters">
+            <li data-filter="*" class="filter-active">Tot</li>
+            <li data-filter=".filter-grups">Grups</li>
+            <li data-filter=".filter-solistes">Solistes</li>
+          </ul>
         </div>
       </div>
     
     
-      <div class="row">
+      <div class="row artistes-container">
         <!-- Artista 1 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 filter-solistes">
           <div class="icon-box">
             <img src="assets/img/artistes/xavibo.jpg" class="card-img-top" alt="Artista 1">
             <div class="card-body">
@@ -565,7 +549,7 @@
         </div>
     
         <!-- Artista 2 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 filter-solistes">
           <div class="icon-box">
             <img src="assets/img/artistes/marc-segui-2-644a8c13cf626.jpg" class="card-img-top" alt="Artista 2">
             <div class="card-body">
@@ -577,11 +561,47 @@
         </div>
     
         <!-- Artista 3 -->
-        <div class="col-md-4 mb-4">
+        <div class="col-md-4 mb-4 filter-solistes">
           <div class="icon-box">
             <img src="assets/img/artistes/desire.jpeg" class="card-img-top" alt="Artista 3">
             <div class="card-body">
               <h5 class="card-title">DESIIRE</h5>
+              <p class="card-text">Descripción corta del Artista 3.</p>
+              <a href="#" class="btn btn-primary">Veure més</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artista 4 -->
+        <div class="col-md-4 mb-4 filter-grups">
+          <div class="icon-box">
+            <img src="assets/img/artistes/antonia-font.jpg" class="card-img-top" alt="Artista 4">
+            <div class="card-body">
+              <h5 class="card-title">Antonia Font</h5>
+              <p class="card-text">Descripción corta del Artista 3.</p>
+              <a href="#" class="btn btn-primary">Veure més</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artista 5 -->
+        <div class="col-md-4 mb-4 filter-solistes">
+          <div class="icon-box">
+            <img src="assets/img/artistes/rels-b.jpg" class="card-img-top" alt="Artista 5">
+            <div class="card-body">
+              <h5 class="card-title">Rels B</h5>
+              <p class="card-text">Descripción corta del Artista 3.</p>
+              <a href="#" class="btn btn-primary">Veure més</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Artista 6 -->
+        <div class="col-md-4 mb-4 filter-grups">
+          <div class="icon-box">
+            <img src="assets/img/artistes/xanguito.jpg" class="card-img-top" alt="Artista 6">
+            <div class="card-body">
+              <h5 class="card-title">Xanguito</h5>
               <p class="card-text">Descripción corta del Artista 3.</p>
               <a href="#" class="btn btn-primary">Veure més</a>
             </div>
