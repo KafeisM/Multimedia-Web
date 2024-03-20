@@ -55,7 +55,7 @@
           <li><a class="nav-link active" href="#header">Inici</a></li>
           <li><a class="nav-link" href="#resume">Events</a></li>
           <li><a class="nav-link" href="#services">Artistes</a></li>
-          <li><a class="nav-link" href="#news">Novetats</a></li>
+          <li><a class="nav-link" href="#novetats">Novetats</a></li>
           <li><a class="nav-link" href="#about">Sobre nosaltres</a></li>
           <li><a class="nav-link" href="#contact">Contacte</a></li>
         </ul>
@@ -561,8 +561,8 @@
     </div>
   </section><!-- Artistes Section -->
 
-  <!-- ======= Novetats ======= -->
-  <section id="news" class="news">
+  <!-- ======= Novetats Section ======= -->
+  <section id="novetats" class="novetats">
     <div class="container">
 
       <div class="section-title">
@@ -571,20 +571,21 @@
 
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
+          <ul id="novetats-flters">
             <li data-filter="*" class="filter-active">Tot</li>
-            <li data-filter=".filter-app">Cançons</li>
-            <li data-filter=".filter-card">Álbums</li>
-            <li data-filter=".filter-web">Concerts</li>
+            <li data-filter=".filter-cançons">Cançons</li>
+            <li data-filter=".filter-artistes">Artistes</li>
+            <li data-filter=".filter-concerts">Concerts</li>
+            <li data-filter=".filter-altres">Altres</li>
           </ul>
         </div>
       </div>
 
-      <div class="row news-container">
+      <div class="row novetats-container">
 
-        <div class="news-item">
-          <img src="assets/img/Novetats/MarcSegui.jpg" alt="Imagen de la noticia">
-          <div class="news-content">
+        <div class="novetats-item filter-cançons">
+          <img src="assets/img/Novetats/MarcSegui.jpg" class="img-fluid" alt="">
+          <div class="novetats-content">
             <h3>Nou disc de Marc Seguí</h3>
             <p>Després d'una espera emocionant, Marc Seguí ens presenta el seu últim 
               treball musical que captura l'ànima de les illes amb cada nota. Amb cançons 
@@ -595,9 +596,9 @@
           </div>
         </div>
       
-        <div class="news-item">
-          <img src="assets/img/Novetats/Anegats.jpg" alt="Imagen de la noticia">
-          <div class="news-content">
+        <div class="novetats-item filter-concerts">
+          <img src="assets/img/Novetats/Anegats.jpg" class="img-fluid" alt="">
+          <div class="novetats-content">
             <h3>Anegats anuncia un nou concert</h3>
             <p>Després d'anys de música i emoció, "Anegats" anuncia el seu darrer concert a Son Fusteret, 
               i s'espera una gran multitud de seguidors per acompanyar-los en aquesta darrera actuació. 
@@ -607,162 +608,57 @@
           </div>
         </div>
 
-        <!-- Agrega más divs .col-lg-4 .col-md-6 con noticias adicionales según sea necesario -->
+        <div class="novetats-item filter-artistes">
+          <img src="assets/img/Novetats/desire.jpeg" class="img-fluid" alt="">
+          <div class="novetats-content">
+            <h3>Revolució musical a les Balears: DESIIRE</h3>
+            <p>Desiire, un talentós cantant mallorquí, està emergint com una nova estrella a l'escena musical. 
+              Amb un estil únic que fusiona urbà espanyol i boom bap espanyol, la seva música està captivant oients de tot arreu. 
+              Treballant amb la discogràfica 3YF Records, Desiire ha llançat cançons com 'A veces', 'Kush Mints' i 
+              'Melaza', que han estat èxits instantanis, atraient l'atenció de la indústria musical cap al talent emergent 
+              de Desiire. Amb el seu carisma a l'escenari i el seu indiscutible talent, Desiire té un futur brillant per endavant, 
+              i el seu ascens ràpid només és el començament d'una emocionant carrera musical.
+            </p>
+          </div>
+        </div>
+
+        <div class="novetats-item filter-artistes">
+          <img src="assets/img/Novetats/RelsB.jpg" class="img-fluid" alt="">
+          <div class="novetats-content">
+            <h3>Rels B tiunfa arreu del món</h3>
+            <p>Rels B, de nom real Daniel Heredia Vidal, és un reconegut raper i cantant nascut a Mallorca el 1993. 
+              Rels B ha guanyat popularitat tant a Espanya com a nivell internacional gràcies a la seva habilitat per 
+              crear lletres enganxoses i melodies contagioses. Un gran exemple és la cançó amb títol 'A mí', la qual 
+              és la que més reproduccions té. A més d'aquesta, podem trobar cançons com: 'Cómo dormiste?', 
+              'lo que hay por aquí', 'Un rodeoooo' i '100 TRACKS'.
+
+            </p>
+          </div>
+        </div>
+
+        <div class="novetats-item filter-artistes">
+          <img src="assets/img/Novetats/AntoniaFont.jpg" class="img-fluid" alt="">
+          <div class="novetats-content">
+            <h3>Antònia Font, el grup balear més escoltat</h3>
+            <p>Antònia Font és un grup mallorquí, fundat el 1997, que és conegut per a totes les Balears. Aquest darrer any 2023, 
+              s'ha convertit amb el grup en català amb més reproduccions, amb cançons com: 'Alegria' arriba als 6.157.127 reproduccions, 
+              'Viure sense tu' amb 5.277.336, i 'Calgary 88' amb 3.817.596.
+            </p>
+          </div>
+        </div>
+
+        <div class="novetats-item filter-altres">
+          <img src="assets/img/Novetats/video.jpg" class="img-fluid" alt="">
+          <div class="novetats-content">
+            <h3>Polèmica amb Samantha Hudson amb 'Por España'</h3>
+            <p>La cantant mallorquina crea polèmica amb el seu videoclip i cançó 'Por España'.
+            </p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-<!--  
-  <section id="portfolio" class="portfolio">
-    <div class="container">
-
-      <div class="section-title">
-        <h2>Novetats Semanals</h2>
-        <p>My Works</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" class="filter-active">All</li>
-            <li data-filter=".filter-app">Cançons</li>
-            <li data-filter=".filter-card">Álbums</li>
-            <li data-filter=".filter-web">Concerts</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="row portfolio-container">
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>--> <!-- End Portfolio Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
