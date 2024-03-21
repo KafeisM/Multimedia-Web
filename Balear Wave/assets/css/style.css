@@ -1462,11 +1462,10 @@ section .container {
   border-radius: 8px;
 }
 
+/* Estilos generales */
 .events-item img {
-  width: 300px; /* Ajusta el ancho de la imagen según sea necesario */
-  height: 300px;
-  object-fit: cover;
-  border-radius: 8px 8px 8px 8px; /* Añade bordes redondeados solo en la esquina superior izquierda y en la inferior izquierda */
+  max-width: 100%; /* Hacer que las imágenes sean responsivas */
+  height: auto;
 }
 
 .events-content {
@@ -1499,5 +1498,34 @@ section .container {
 #mapaImagen {
   width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
   height: auto; /* Ajusta automáticamente la altura para mantener la proporción */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 1200px) {
+  .events-item {
+    flex-direction: column; /* Cambiar la dirección de los elementos en pantallas pequeñas */
+  }
+}
+
+/* Estilos para pantallas grandes */
+@media (min-width: 1200px) {
+  .events-item {
+    margin-bottom: 40px; /* Aumenta el espacio entre los elementos */
+  }
+
+  .events-content h3 {
+    font-size: 36px; /* Aumenta el tamaño del título */
+  }
+
+  .events-content p {
+    font-size: 22px; /* Aumenta el tamaño del texto */
+  }
+
+  .events-item img {
+    width: 300px; /* Ajusta el ancho de la imagen según sea necesario */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px 8px 8px 8px; /* Añade bordes redondeados solo en la esquina superior izquierda y en la inferior izquierda */
+  }
 }
 
