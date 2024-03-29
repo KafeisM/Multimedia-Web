@@ -65,6 +65,7 @@ h6 {
   align-items: center;
   z-index: 997;
   overflow-y: auto;
+  justify-content: center;
 }
 
 #header * {
@@ -979,19 +980,25 @@ section .container {
   height: auto;
 }
 
+/* Estilos generales */
+.novetats-item video {
+  max-width: 100%; /* Hacer que las imágenes sean responsivas */
+  height: auto;
+}
+
 .novetats-content {
   flex: 1; /* Hace que el contenido ocupe todo el espacio disponible */
   padding: 20px;
 }
 
 .novetats-content h3 {
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
 .novetats-content p {
-  font-size: 20px;
+  font-size: 15px;
   color: #ffffff;
   margin-bottom: 20px;
 }
@@ -1010,20 +1017,48 @@ section .container {
   }
 
   .novetats-content h3 {
-    font-size: 36px; /* Aumenta el tamaño del título */
+    font-size: 30px; /* Aumenta el tamaño del título */
   }
 
   .novetats-content p {
-    font-size: 22px; /* Aumenta el tamaño del texto */
+    font-size: 20px; /* Aumenta el tamaño del texto */
   }
 
   .novetats-item img {
     width: 350px; /* Hacer que las imágenes sean responsivas */
     height: 350px;
   }
+
+  /* Estilos generales */
+  .novetats-item video {
+    width: 350px; /* Hacer que las imágenes sean responsivas */
+    height: 350px;
+  }
 }
 
+.carousel-container {
+  width: 100%; /* Adjust the width as needed */
+  margin: 50px auto; /* Center the carousel horizontally */
+}
 
+.carousel-item img {
+  max-width: 100%; /* Images will scale to fit width */
+  height: 500px;       /* Maintains aspect ratio */
+  filter: brightness(0.6); /* Oscurece la imagen al 30% */
+}
+
+@media (max-width: 1000px) {
+  .carousel-container {
+    width: 100%; /* Adjust the width as needed */
+    margin: 50px auto; /* Center the carousel horizontally */
+  }
+  
+  .carousel-item img {
+    max-width: 100%; /* Images will scale to fit width */
+    height: 200px;       /* Maintains aspect ratio */
+    filter: brightness(0.6); /* Oscurece la imagen al 30% */
+  }
+}
 
 /*--------------------------------------------------------------
 # Contact
