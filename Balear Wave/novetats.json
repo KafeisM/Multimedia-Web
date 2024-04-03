@@ -1,0 +1,45 @@
+{
+  "pagina_web": {
+    "titol": "Balear Wave",
+    "descripcio": "Tu portal para descubrir música local de las Islas Baleares.",
+
+    "novetats": [
+      {
+        "titol": "Nou disc de Marc Seguí",
+        "descripcio": "Després d'una espera emocionant, Marc Seguí ens presenta el seu últim treball musical que captura l'ànima de les illes amb cada nota. Amb cançons profundes i ritmes vibrants, aquest disc promet portar-nos en un viatge emocionant a través de les seves vivències i emocions. Prepara't per submergir-te en un oceà d'harmonies amb l'essència única de Marc Seguí. No et perdis aquesta experiència musical inoblidable!",
+        "categoria": "cançons",
+        "imatge": "assets/img/Novetats/MarcSegui.jpg"
+      },
+      {
+        "titol": "Anegats anuncia un nou concert",
+        "descripcio": "Després d'anys de música i emoció, 'Anegats' anuncia el seu darrer concert a Son Fusteret, i s'espera una gran multitud de seguidors per acompanyar-los en aquesta darrera actuació. Serà una ocasió única per a tots els seus fans, una darrera oportunitat per experimentar la seva energia en directe i celebrar el seu llegat musical. No et perdis aquesta històrica nit mentre diem adeu a 'Anegats'.",
+        "categoria": "concerts",
+        "imatge": "assets/img/Novetats/Anegats.jpg"
+      },
+      {
+        "titol": "Revolució musical a les Balears: DESIIRE",
+        "descripcio": "Desiire, un talentós cantant mallorquí, està emergint com una nova estrella a l'escena musical. Amb un estil únic que fusiona urbà espanyol i boom bap espanyol, la seva música està captivant oients de tot arreu. Treballant amb la discogràfica 3YF Records, Desiire ha llançat cançons com 'A veces', 'Kush Mints' i 'Melaza', que han estat èxits instantanis, atraient l'atenció de la indústria musical cap al talent emergent de Desiire. Amb el seu carisma a l'escenari i el seu indiscutible talent, Desiire té un futur brillant per endavant, i el seu ascens ràpid només és el començament d'una emocionant carrera musical.",
+        "categoria": "artistes",
+        "imatge": "assets/img/Novetats/desire.jpeg"
+      },
+      {
+        "titol": "Rels B triunfa arreu del món",
+        "descripcio": "Rels B, de nom real Daniel Heredia Vidal, és un reconegut raper i cantant nascut a Mallorca el 1993. Rels B ha guanyat popularitat tant a Espanya com a nivell internacional gràcies a la seva habilitat per crear lletres enganxoses i melodies contagioses. Un gran exemple és la cançó amb títol 'A mí', la qual és la que més reproduccions té. A més d'aquesta, podem trobar cançons com: 'Cómo dormiste?', 'lo que hay por aquí', 'Un rodeoooo' i '100 TRACKS'.",
+        "categoria": "artistes",
+        "imatge": "assets/img/Novetats/RelsB.jpg"
+      },
+      {
+        "titol": "Antònia Font, el grup balear més escoltat",
+        "descripcio": "Antònia Font és un grup mallorquí, fundat el 1997, que és conegut per a totes les Balears. Aquest darrer any 2023, s'ha convertit amb el grup en català amb més reproduccions, amb cançons com: 'Alegria' arriba als 6.157.127 reproduccions, 'Viure sense tu' amb 5.277.336, i 'Calgary 88' amb 3.817.596.",
+        "categoria": "artistes",
+        "imatge": "assets/img/Novetats/AntoniaFont.jpg"
+      },
+      {
+        "titol": "Polèmica amb Samantha Hudson amb 'Por España'",
+        "descripcio": "La cantant mallorquina crea polèmica amb el seu videoclip i cançó 'Por España'.",
+        "categoria": "altres",
+        "video": "assets/img/Novetats/SamanthaHudsonVideo.mp4"
+      }
+    ]
+  }
+}
