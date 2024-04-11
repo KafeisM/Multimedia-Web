@@ -1,0 +1,100 @@
+{
+    "@context": "https://schema.org",
+    "artists": [
+      {
+        "@type": "MusicGroup",
+        "name": "Nombre del Artista 1",
+        "genre": "Género Musical 1",
+        "image": "URL de la imagen 1",
+        "description": "Descripción del Artista 1",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Nombre del Álbum 1",
+            "image": "URL de la imagen del álbum 1",
+            "byArtist": "Nombre del Artista 1",
+            "datePublished": "Fecha de Publicación 1",
+            "description": "Descripción del Álbum 1"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Nombre del Artista 2",
+        "genre": "Género Musical 2",
+        "image": "URL de la imagen 2",
+        "description": "Descripción del Artista 2",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Nombre del Álbum 2",
+            "image": "URL de la imagen del álbum 2",
+            "byArtist": "Nombre del Artista 2",
+            "datePublished": "Fecha de Publicación 2",
+            "description": "Descripción del Álbum 2"
+          }
+        ]
+      }
+    ],
+    "@type": "MusicEvent",
+    "events": [
+      {
+        "name": "Nombre del Evento 1",
+        "startDate": "2024-07-23T19:00",
+        "location": {
+          "@type": "Place",
+          "name": "Nombre del Lugar 1",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mallorca",
+            "addressCountry": "ES"
+          }
+        },
+        "performer": [
+          {
+            "@type": "MusicGroup",
+            "name": "Nombre del Artista 1"
+          }
+        ],
+        "description": "Descripción del Evento 1",
+        "image": "URL de la imagen 1",
+        "offers": {
+          "@type": "Offer",
+          "price": "50.00",
+          "priceCurrency": "EUR",
+          "url": "URL de compra de entradas",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "name": "Nombre del Evento 2",
+        "startDate": "2024-07-30T19:00",
+        "location": {
+          "@type": "Place",
+          "name": "Nombre del Lugar 2",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mallorca",
+            "addressCountry": "ES"
+          }
+        },
+        "performer": [
+          {
+            "@type": "MusicGroup",
+            "name": "Nombre del Artista 2"
+          }
+        ],
+        "description": "Descripción del Evento 2",
+        "image": "URL de la imagen 2",
+        "offers": {
+          "@type": "Offer",
+          "price": "50.00",
+          "priceCurrency": "EUR",
+          "url": "URL de compra de entradas",
+          "availability": "https://schema.org/InStock"
+        }
+      }
+    ]
+  }
+  
+  
