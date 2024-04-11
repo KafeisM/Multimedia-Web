@@ -3,35 +3,97 @@
     "artists": [
       {
         "@type": "MusicGroup",
-        "name": "Nombre del Artista 1",
-        "genre": "Género Musical 1",
-        "image": "URL de la imagen 1",
-        "description": "Descripción del Artista 1",
+        "name": "Xavibo",
+        "genre": "Música Úrbana",
+        "image": "https://www.balearwave.com/assets/img/artistes/xavibo.jpg",
+        "description": "Xavibo és un raper conegut per les seves cançons emotives com “Fent Na”, “Que Triste”, “Plorar al reves” i “Cansat d'estar trist”. La seva música es caracteritza per representar emocions malenconioses i missatges intimistes. A més, ha guanyat popularitat a TikTok, on compta amb més de 80,000 seguidors.",
         "album": [
           {
             "@type": "MusicAlbum",
-            "name": "Nombre del Álbum 1",
+            "name": "Papel de burbujas",
             "image": "URL de la imagen del álbum 1",
-            "byArtist": "Nombre del Artista 1",
-            "datePublished": "Fecha de Publicación 1",
-            "description": "Descripción del Álbum 1"
+            "byArtist": "Xavibo",
+            "datePublished": "2023-09-13"
           }
         ]
       },
       {
         "@type": "MusicGroup",
-        "name": "Nombre del Artista 2",
-        "genre": "Género Musical 2",
-        "image": "URL de la imagen 2",
-        "description": "Descripción del Artista 2",
+        "name": "Marc Seguí",
+        "genre": "Pop",
+        "image": "https://www.balearwave.com/assets/img/artistes/marc-segui-2-644a8c13cf626.jpg",
+        "description": "Marc Seguí és un cantant i compositor mallorquí que ha destacat a l'escena musical espanyola amb el seu estil pop i indie. És conegut per les seves lletres senzilles, melodies enganxoses i una veu distintiva. Va aconseguir gran popularitat amb el seu senzill “Tiroteo”, i la seva música sovint explora temes sentimentals.",
         "album": [
           {
             "@type": "MusicAlbum",
-            "name": "Nombre del Álbum 2",
+            "name": "Pinta y Colorea",
             "image": "URL de la imagen del álbum 2",
-            "byArtist": "Nombre del Artista 2",
-            "datePublished": "Fecha de Publicación 2",
-            "description": "Descripción del Álbum 2"
+            "byArtist": "Marc Seguí",
+            "datePublished": "2021-11-26"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Desiire",
+        "genre": "Música Úrbana",
+        "image": "https://www.balearwave.com/assets/img/artistes/desire.jpeg",
+        "description": "Desiire, de Muro, Mallorca, és una artista emergent que està irrompent a l'escena del rap amb lletres incisives i ritmes contundents. El seu estil únic incorpora influències del rap clàssic amb tocs de la vibrant cultura musical mallorquina. Amb el primer senzill, Desiire demostra la seva habilitat per narrar històries urbanes.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "En ruinas",
+            "image": "URL de la imagen del álbum 1",
+            "byArtist": "Desiire",
+            "datePublished": "2022-05-26"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Antònia Font",
+        "genre": "Pop Rock",
+        "image": "https://www.balearwave.com/assets/img/artistes/antonia-font.jpg",
+        "description": "Antònia Font és un grup musical de Mallorca format el 1997. La seva música es distingeix pel seu estil pop amb lletres que abasten temàtiques com la ciència ficció i la vida a Mallorca, creant atmosferes oníriques i personals. El grup és conegut per la seva diversitat temàtica i el seu enfocament únic en la composició de cançons.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Un minut estroboscòpica",
+            "image": "URL de la imagen del álbum 1",
+            "byArtist": "Antònia Font",
+            "datePublished": "2022-03-25"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Rels B",
+        "genre": "Hip-hop/Rap",
+        "image": "https://www.balearwave.com/assets/img/artistes/rels-b.jpg",
+        "description": "Rels B, el nom real del qual és Daniel Heredia Vidal, és un cantant, compositor i productor musical espanyol. Es destaca en gèneres com el rhythm and blues, dancehall, pop llatí, hip hop i reguetó. Conegut per la seva versatilitat i les seves produccions musicals independents, Rels B és considerat un dels principals exponents de la música urbana a Espanya.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "AfroLOVA'23",
+            "image": "URL de la imagen del álbum 1",
+            "byArtist": "Rels B",
+            "datePublished": "2023-06-21"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Xanguito",
+        "genre": "Música alternativa/Indie",
+        "image": "https://www.balearwave.com/assets/img/artistes/xanguito.jpg",
+        "description": "Xanguito és un grup mallorquí de mestissatge que es caracteritza per la seva música animada i el seu estil únic que combina elements de folk, rap, rumba i electrònica. Fundat el 2017 a Bunyola, Mallorca, el grup ha guanyat reconeixement pel seu disc debut ‘Beix’ i per les seves actuacions enèrgiques que transformen qualsevol espai en una festa.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Bon Rotllo",
+            "image": "URL de la imagen del álbum 1",
+            "byArtist": "Xanguito",
+            "datePublished": "2024-03-22"
           }
         ]
       }
