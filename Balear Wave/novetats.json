@@ -40,6 +40,64 @@
         "categoria": "altres",
         "video": "assets/img/Novetats/SamanthaHudsonVideo.mp4"
       }
+    ],
+
+    "events": [
+      {
+        "data":"2024-04-13",
+        "cantant":"Xavibo",
+        "nom_gira":"Papel de Burbujas Tour",
+        "hora":"20:00",
+        "preu":25.00,
+        "local":"Es Gremi",
+        "direccio":"Carrer Gremi de Porgadors, 16",
+        "ciutat":"Palma",
+        "entrades":"https://www.seetickets.com/es/event/xavibo/sala-es-gremi-palma-mallorca/2649533"
+      },
+      {
+        "data":"2024-04-28",
+        "cantant":"Marc Seguí",
+        "nom_gira":"AAAAAA Tour",
+        "hora":"21:30",
+        "preu":21.00,
+        "local":"Es Gremi",
+        "direccio":"Carrer Gremi de Porgadors, 16",
+        "ciutat":"Palma",
+        "entrades":"https://esgremi.com/evento/marc-segui/"
+      },
+      {
+        "data":"2024-05-13",
+        "cantant":"Desiree",
+        "nom_gira":"Sin Miedo",
+        "hora":"20:00",
+        "preu":25.00,
+        "local":"Es Gremi",
+        "direccio":"Carrer Gremi de Porgadors, 16",
+        "ciutat":"Palma",
+        "entrades":""
+      },
+      {
+        "data":"2024-05-24",
+        "cantant":"Anegats",
+        "nom_gira":"Estels de Llenya",
+        "hora":"21:00",
+        "preu":20.00,
+        "local":"Sala Son Fusteret",
+        "direccio":"Carrer de Son Fusteret, 2",
+        "ciutat":"Palma",
+        "entrades":"https://ticketib.com/events/anegats-palma"
+      },
+      {
+        "data":"2024-06-20",
+        "cantant":"Rels B",
+        "nom_gira":"Good Trip Tour",
+        "hora":"19:30",
+        "preu":30.00,
+        "local":"Sala La Movida",
+        "direccio":"Carrer de s'Hostal, 14",
+        "ciutat":"Palma",
+        "entrades":"https://www.tomaticket.es/es-es/entradas-entradas-de-dia-mallorca-live-festival-en-calvia"
+      }
     ]
   }
 }
