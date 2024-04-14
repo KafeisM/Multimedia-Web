@@ -11,7 +11,7 @@
           {
             "@type": "MusicAlbum",
             "name": "Papel de burbujas",
-            "image": "URL de la imagen del álbum 1",
+            "image": "https://www.balearwave.com/assets/img/artistes/papeldeburbujas.jpg",
             "byArtist": "Xavibo",
             "datePublished": "2023-09-13"
           }
@@ -27,7 +27,7 @@
           {
             "@type": "MusicAlbum",
             "name": "Pinta y Colorea",
-            "image": "URL de la imagen del álbum 2",
+            "image": "https://www.balearwave.com/assets/img/artistes/pintaycolorea.jpg",
             "byArtist": "Marc Seguí",
             "datePublished": "2021-11-26"
           }
@@ -35,15 +35,15 @@
       },
       {
         "@type": "MusicGroup",
-        "name": "Desiire",
+        "name": "Desiire 3YF",
         "genre": "Música Úrbana",
         "image": "https://www.balearwave.com/assets/img/artistes/desire.jpeg",
         "description": "Desiire, de Muro, Mallorca, és una artista emergent que està irrompent a l'escena del rap amb lletres incisives i ritmes contundents. El seu estil únic incorpora influències del rap clàssic amb tocs de la vibrant cultura musical mallorquina. Amb el primer senzill, Desiire demostra la seva habilitat per narrar històries urbanes.",
         "album": [
           {
             "@type": "MusicAlbum",
-            "name": "En ruinas",
-            "image": "URL de la imagen del álbum 1",
+            "name": "En Ruinas",
+            "image": "https://www.balearwave.com/assets/img/artistes/enruinas.jpg",
             "byArtist": "Desiire",
             "datePublished": "2022-05-26"
           }
@@ -59,7 +59,7 @@
           {
             "@type": "MusicAlbum",
             "name": "Un minut estroboscòpica",
-            "image": "URL de la imagen del álbum 1",
+            "image": "https://www.balearwave.com/assets/img/artistes/unminut.jpg",
             "byArtist": "Antònia Font",
             "datePublished": "2022-03-25"
           }
@@ -75,7 +75,7 @@
           {
             "@type": "MusicAlbum",
             "name": "AfroLOVA'23",
-            "image": "URL de la imagen del álbum 1",
+            "image": "https://www.balearwave.com/assets/img/artistes/afrolova.jpg",
             "byArtist": "Rels B",
             "datePublished": "2023-06-21"
           }
@@ -91,7 +91,7 @@
           {
             "@type": "MusicAlbum",
             "name": "Bon Rotllo",
-            "image": "URL de la imagen del álbum 1",
+            "image": "https://www.balearwave.com/assets/img/artistes/bonrotllo.jpg",
             "byArtist": "Xanguito",
             "datePublished": "2024-03-22"
           }
@@ -101,11 +101,11 @@
     "@type": "MusicEvent",
     "events": [
       {
-        "name": "Nombre del Evento 1",
+        "name": "Xavibo - Papel de Burbujas Tour",
         "startDate": "2024-07-23T19:00",
         "location": {
           "@type": "Place",
-          "name": "Nombre del Lugar 1",
+          "name": "Es Gremi",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Mallorca",
@@ -115,25 +115,25 @@
         "performer": [
           {
             "@type": "MusicGroup",
-            "name": "Nombre del Artista 1"
+            "name": "Xavibo"
           }
         ],
-        "description": "Descripción del Evento 1",
-        "image": "URL de la imagen 1",
+        "description": "Xavibo electriza el escenario de Es Gremi de Palma con su energía vibrante y su música contagiosa, cautivando al público con su estilo único y envolvente.",
+        "image": "https://www.balearwave.com/assets/img/events/xaviboev.jpg",
         "offers": {
           "@type": "Offer",
-          "price": "50.00",
+          "price": "25.00",
           "priceCurrency": "EUR",
-          "url": "URL de compra de entradas",
+          "url": "https://www.seetickets.com/es/event/xavibo/sala-es-gremi-palma-mallorca/2649533",
           "availability": "https://schema.org/InStock"
         }
       },
       {
-        "name": "Nombre del Evento 2",
+        "name": "Marc Seguí - AAAAAA Tour",
         "startDate": "2024-07-30T19:00",
         "location": {
           "@type": "Place",
-          "name": "Nombre del Lugar 2",
+          "name": "Es Gremi",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Mallorca",
@@ -143,16 +143,100 @@
         "performer": [
           {
             "@type": "MusicGroup",
-            "name": "Nombre del Artista 2"
+            "name": "Marc Seguí"
           }
         ],
-        "description": "Descripción del Evento 2",
-        "image": "URL de la imagen 2",
+        "description": "En un futuro brillante, Marc Seguí electrificará el escenario de Es Gremi de Palma con su magnetismo inigualable y su música cautivadora, dejando una huella imborrable en la audiencia con su actuación memorable",
+        "image": "https://www.balearwave.com/assets/img/events/marcsg.jpg",
         "offers": {
           "@type": "Offer",
-          "price": "50.00",
+          "price": "20.00",
           "priceCurrency": "EUR",
-          "url": "URL de compra de entradas",
+          "url": "https://esgremi.com/evento/marc-segui/",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "name": "Desiire 3YF - Gira Sin Miedo",
+        "startDate": "2024-08-20T20:00",
+        "location": {
+          "@type": "Place",
+          "name": "Es Gremi",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mallorca",
+            "addressCountry": "ES"
+          }
+        },
+        "performer": [
+          {
+            "@type": "MusicGroup",
+            "name": "Desiire 3YF"
+          }
+        ],
+        "description": "En un escenario futurista en Es Gremi de Palma, Desiire 3YF deslumbrará con su presencia magnética y su música innovadora, creando una experiencia hipnótica que resonará en la audiencia mucho después de que las luces se apaguen.",
+        "image": "https://www.balearwave.com/assets/img/events/desire.jpeg",
+        "offers": {
+          "@type": "Offer",
+          "price": "16.00",
+          "priceCurrency": "EUR",
+          "url": "https://esgremi.com/evento/marc-segui/",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "name": "Anegats - Concert 'Estels de Llenya'",
+        "startDate": "2024-10-11T20:00",
+        "location": {
+          "@type": "Place",
+          "name": "Son Fusteret",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mallorca",
+            "addressCountry": "ES"
+          }
+        },
+        "performer": [
+          {
+            "@type": "MusicGroup",
+            "name": "Anegats"
+          }
+        ],
+        "description": "En un futuro próximo, Anegats brillará en el escenario de Son Fusteret con su energía arrolladora y su música emocionante, creando un espectáculo inolvidable que cautivará a la audiencia y resonará en los corazones de todos los presentes.",
+        "image":"https://www.balearwave.com/assets/img/events/Anegats.jpg",
+        "offers": {
+          "@type": "Offer",
+          "price": "26.00",
+          "priceCurrency": "EUR",
+          "url": "https://ticketib.com/events/anegats-palma",
+          "availability": "https://schema.org/InStock"
+        }
+      },
+      {
+        "name": "Rels B - Good Trip Tour",
+        "startDate": "2024-10-12T20:00",
+        "location": {
+          "@type": "Place",
+          "name": "Sala La Movida",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Mallorca",
+            "addressCountry": "ES"
+          }
+        },
+        "performer": [
+          {
+            "@type": "MusicGroup",
+            "name": "Rels B"
+          }
+        ],
+        "description":"Rels B elevará la atmósfera en la Sala La Movida con su estilo único y música envolvente, cautivando a la audiencia con su energía contagiosa y talento innegable, creando un espectáculo que quedará grabado en la memoria de todos los asistentes",
+        "image":"https://www.balearwave.com/assets/img/events/relsbeve.jpg",
+        "offers": {
+          "@type": "Offer",
+          "price": "29.00",
+          "priceCurrency": "EUR",
+          "url": "https://www.tomaticket.es/es-es/entradas-entradas-de-dia-mallorca-live-festival-en-calvia",
           "availability": "https://schema.org/InStock"
         }
       }
