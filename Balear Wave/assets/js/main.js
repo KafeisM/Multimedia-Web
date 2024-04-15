@@ -185,7 +185,7 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Novetats isotope and filter
    */
   window.addEventListener('load', () => {
     let novetatsContainer = document.querySelector('.novetats-container');
