@@ -219,28 +219,48 @@
 window.addEventListener('load', () => {
   let artistesContainer = document.querySelector('.artistes-container');
   if (artistesContainer) {
-      let artistesIsotope = new Isotope(artistesContainer, {
-          itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
-          layoutMode: 'fitRows'
+    let artistesIsotope = new Isotope(artistesContainer, {
+      itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
+      layoutMode: 'fitRows'
+    });
+
+    let artistesFilters = document.querySelectorAll('#artistes-flters li');
+    let genreFilters = document.querySelector('#genre-flters');
+
+    let currentFilters = ['*', '*']; // Inicializa los filtros con "todos"
+
+    artistesFilters.forEach((filter) => {
+      filter.addEventListener('click', function(e) {
+        e.preventDefault();
+        artistesFilters.forEach((el) => {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        currentFilters[0] = this.getAttribute('data-filter'); // Actualiza el filtro de artistas
+
+        let finalFilter = currentFilters.filter(f => f !== '*').join(''); // Ignora el filtro "todos"
+        finalFilter = finalFilter ? finalFilter : '*'; // Si no hay otros filtros, usa "todos"
+
+        artistesIsotope.arrange({
+          filter: finalFilter // Aplica el filtro final
+        });
       });
+    });
 
-      let artistesFilters = document.querySelectorAll('#artistes-flters li');
+    genreFilters.addEventListener('change', function(e) {
+      currentFilters[1] = this.value; // Actualiza el filtro de género
 
-      artistesFilters.forEach((filter) => {
-          filter.addEventListener('click', function(e) {
-              e.preventDefault();
-              artistesFilters.forEach((el) => {
-                  el.classList.remove('filter-active');
-              });
-              this.classList.add('filter-active');
+      let finalFilter = currentFilters.filter(f => f !== '*').join(''); // Ignora el filtro "todos"
+      finalFilter = finalFilter ? finalFilter : '*'; // Si no hay otros filtros, usa "todos"
 
-              artistesIsotope.arrange({
-                  filter: this.getAttribute('data-filter')
-              });
-          });
+      artistesIsotope.arrange({
+        filter: finalFilter // Aplica el filtro final
       });
+    });
   }
 });
+
 
 /**
 * asrtistes cercador
