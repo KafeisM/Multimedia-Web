@@ -1043,7 +1043,7 @@ section .container {
 
 .carousel-item img {
   max-width: 100%; /* Images will scale to fit width */
-  height: 500px;       /* Maintains aspect ratio */
+  height: 400px;       /* Maintains aspect ratio */
   filter: brightness(0.6); /* Oscurece la imagen al 30% */
 }
 
