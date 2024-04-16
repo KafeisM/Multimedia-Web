@@ -78,7 +78,7 @@
 
   <!-- ======= Events ======= -->
   <section id="events" class="events">
-    <div class="container">
+    <div class="container mt-5">
 
       <div class="section-title">
         <h2>Events</h2>
@@ -87,8 +87,8 @@
       
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="events-flters">
-            <li data-filter="*" class="filter-active">Mapa</li>
+          <ul id="events-filters">
+            <li class="filter" >Mapa</li>
           </ul>
         </div>
       </div>
@@ -103,14 +103,38 @@
 
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
-          <ul id="events-flters">
-            <li data-filter="*" class="filter-active">TOTS</li>
-            <li data-filter="*" class="filter-active">Palma</li>
-            <li data-filter="*" class="filter-active">Tendència</li>
-            <li data-filter="*" class="filter-active">Xavibo</li>
+          <ul id="events-filters">
+            <!-- Otros filtros -->
+            <li id="genre-filter" class="genre-filter">
+              <label for="genre-select">Gènere</label>
+              <select id="genre-select">
+                <option value="todos">Tots</option>
+                <option value="rock">Rock</option>
+                <option value="electrónica">Electrònica</option>
+                <option value="jazz">Jazz</option>
+                <!-- Otros géneros -->
+              </select>
+            </li>
+            <li id="price-filter" class="price-filter">
+              <label for="price-range">Preu</label>
+              <input type="range" id="price-range" name="price" min="0" max="100" value="50">
+              <span id="price-value">50€</span>
+            </li>
+            <li id="date-filter" class="date-filter">
+              <label for="date-input">Data</label>
+              <input type="date" id="date-input" name="date">
+            </li>
+            <li id="search-filter" class="search-filter">
+              <label for="search-input">Cantant/Grup</label>
+              <input type="text" id="search-input" name="search" placeholder="Buscar...">
+            </li>
           </ul>
         </div>
       </div>
+      
+ 
+
+      <hr>
 
       <div class="row">
         <div class="events-item filter-concerts" data-aos="fade-right">

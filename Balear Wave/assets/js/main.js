@@ -247,7 +247,7 @@ window.addEventListener('load', () => {
 });
 
   document.addEventListener('DOMContentLoaded', function() {
-    var botonMapa = document.querySelector('#events-flters li');
+    var botonMapa = document.querySelector('#events-filters li');
     var imagenContainer = document.querySelector('#imagenContainer');
 
     botonMapa.addEventListener('click', function() {

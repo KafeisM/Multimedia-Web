@@ -1477,16 +1477,16 @@ section .container {
   padding: 80px 0;
 }
 
-.events #events-flters {
+#events-filters {
   padding: 0;
-  margin: 0 auto 15px auto;
+  margin: 0 auto;
   list-style: none;
   text-align: center;
   border-radius: 50px;
   padding: 2px 15px;
 }
 
-.events #events-flters li {
+#events-filters li {
   cursor: pointer;
   display: inline-block;
   padding: 8px 16px 10px 16px;
@@ -1501,15 +1501,119 @@ section .container {
   border-radius: 4px;
 }
 
-.events #events-flters li:hover,
-.events #events-flters li.filter-active {
+#events-filters li:hover,
+#events-filters li.filter-active {
   background: #18d26e;
 }
 
-.events #events-flters li:last-child {
+#events-filters li:last-child {
   margin-right: 0;
 }
 
+.price-filter,
+.genre-filter,
+#genre-filter {
+  display: flex;
+  align-items: center;
+}
+
+#price-filter label,
+#genre-filter label {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#genre-filter label:hover {
+  background: #18d26e; /* Fondo verde al pasar el cursor */
+}
+
+#genre-select {
+  font-size: 14px;
+  padding: 5px 16px; /* Reducción del padding vertical */
+  border-radius: 4px;
+  background: #808080; /* Fondo gris */
+  color: #ffffff; /* Color de texto blanco */
+  border: none;
+  outline: none;
+}
+
+
+#genre-select option {
+  background-color: #808080; /* Fondo gris */
+}
+
+/* Cambia los estilos al pasar el cursor sobre las opciones del select */
+#genre-select option:hover {
+  background: #18d26e; /* Fondo verde */
+}
+
+
+#date-filter label {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#date-filter label:hover {
+  background: #18d26e; /* Fondo verde al pasar el cursor */
+}
+
+#date-input {
+  font-size: 14px;
+  padding: 5px 16px; /* Reducción del padding vertical */
+  border-radius: 4px;
+  background: #808080; /* Fondo gris */
+  color: #ffffff; /* Color de texto blanco */
+  border: none;
+  outline: none;
+}
+
+/*----------------------------------------*/
+
+#search-filter label {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#search-filter label:hover {
+  background: #18d26e; /* Fondo verde al pasar el cursor */
+}
+
+#search-input {
+  font-size: 14px;
+  padding: 5px 16px; /* Reducción del padding vertical */
+  border-radius: 4px;
+  background: #808080; /* Fondo gris */
+  color: #ffffff; /* Color de texto blanco */
+  border: none;
+  outline: none;
+}
+
+
+/*-------------------------------------*/
 .events-item {
   display: flex;
   flex-direction: row; /* Alinea los elementos de la noticia en una fila */
