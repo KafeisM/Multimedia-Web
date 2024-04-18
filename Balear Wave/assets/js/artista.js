@@ -3,7 +3,7 @@ window.onload = function() {
     var nombreArtista = params.get('nombre');
     console.log(nombreArtista);
   
-    fetch('../data/events.json')
+    fetch('https://www.balearwave.com/assets/data/events.json')
       .then(response => response.json())
       .then(data => {
         var artistas = data.musicData.artists;
