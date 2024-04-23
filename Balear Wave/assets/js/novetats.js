@@ -10,7 +10,7 @@ function procesarJSON() {
         })
         .then(function (novetats) {
             // Obtener el contenedor donde se agregarán los elementos
-            var contenedor = document.getElementById('.row.novetats-container');
+            var contenedor = document.getElementById('novetats-container');
   
             // Iterar sobre cada artículo en el JSON y crear la estructura HTML
             novetats["@graph"].forEach(function(article) {
