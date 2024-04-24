@@ -496,14 +496,17 @@
       </div>
 
       <div class="row" id="novetats-container">
-        <!-- Aquí se agregarán los elementos creados dinámicamente -->
+          <!-- Aquí se agregarán los elementos creados dinámicamente -->
       </div>
-
+      
       <script src="https://www.balearwave.com/assets/js/novetats.js"></script>
       <script>
-          // Llamar a la función para cargar y procesar el JSON
-          procesarJSON();
+          document.addEventListener('DOMContentLoaded', () => {
+              // Llamar a la función para cargar y procesar el JSON
+              procesarJSON();
+          });
       </script>
+    
 
     </div>
   </section>
