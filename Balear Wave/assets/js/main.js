@@ -142,7 +142,7 @@
    * Novetats isotope and filter
    */
   window.addEventListener('load', () => {
-    let novetatsContainer = document.querySelector('.novetats-container');
+    let novetatsContainer = document.querySelector('#novetats-container');
     if (novetatsContainer) {
         let novetatsIsotope = new Isotope(novetatsContainer, {
             itemSelector: '.novetats-item',
