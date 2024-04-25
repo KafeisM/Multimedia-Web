@@ -13,6 +13,16 @@ window.onload = function() {
           document.getElementById('nombre').textContent = artista.name;
           document.getElementById('imagen').src = artista.image;
           document.getElementById('descripcion').textContent = artista.description;
+
+          // El primer album a la llista es el mes recent
+          var albumMasReciente = artista.album[0];
+
+          // Cercar el iframe en el HTML
+          var iframe = document.getElementById('albumes-container').getElementsByTagName('iframe')[0];
+
+          // Posar el src del iframe al link de Spotify del àlbum
+          iframe.src = albumMasReciente.spotifyAlbumLink;
+          console.log(iframe.src);
   
           var divAlbumes = document.getElementById('albumes');
           artista.album.forEach(album => {
@@ -28,6 +38,8 @@ window.onload = function() {
             var p = document.createElement('p');
             p.textContent = 'Publicado el ' + album.datePublished;
             divAlbumes.appendChild(p);
+
+          
           });
         }
       });
