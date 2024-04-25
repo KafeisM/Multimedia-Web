@@ -13,28 +13,52 @@
    <link href="assets/img/logo2.svg" rel="icon">
    <link href="assets/img/logo2.svg" rel="apple-touch-icon">
 
-  <link href="assets/css/artistes.css" rel="stylesheet">
+   <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+   <script src="assets/js/artista.js"></script>
 
 </head>
 
 <body>
-  <div id="artista">
-    <div id="artista-info">
-      <img id="imagen" src="" alt="Imagen del artista">
-      <div id="info-text">
-        <h1 id="nombre"></h1>
-        <p id="descripcion"></p>
+  <div class= "artista-container"> 
+    <div class="about-me container">
+      
+      <div class="section-title">
+        <h2>Llegeix més sobre els artistes</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4" data-aos="fade-right">
+          <img id="imagen" src="" alt="Imagen del artista" style="max-width: 100%; height: auto;">
+        </div>
+        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+          <h3 id="nombre"></h3>
+          <p id="descripcion"></p>
+        </div>
+      </div>
+      <div id="albumes-container">
+        <div class="section-title">
+          <h2>ÀLBUM MÉS RECENT</h2>
+        </div>
+        <iframe style="border-radius:12px" src="" width="100%" height="352" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+        </iframe>
       </div>
     </div>
-    <div id="albumes-container">
-      <h2>Àlbum més recent</h2>
-      <iframe style="border-radius:12px" src="" 
-              width="100%" height="352" frameBorder="0" allowfullscreen="" 
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
-      </iframe>
-    </div>
   </div>
-  <script src="assets/js/artista.js"></script>
+
 </body>
 
 </html>

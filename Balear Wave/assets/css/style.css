@@ -1720,3 +1720,28 @@ body {
   background: rgb(235, 235, 235);
 }
 
+/*album*/ 
+#albumes-container {
+  font-size: 1.5em; /* tamany lletra*/
+  width: 100%;
+  margin-top: 20px; /* Agrega un margen superior */
+}
+
+#albumes-container img {
+  max-width: 25%;
+  height: auto;
+  margin-top: 20px;
+  transition: ease-in-out 0.3s;
+}
+
+.artista-container {
+  background-color: #000; /* Color de fondo negro */
+  padding: 20px; /* Espacio alrededor del contenido */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+  margin-top: 20px; 
+}
+
+
+
+
