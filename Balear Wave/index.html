@@ -96,9 +96,9 @@
               <label for="genre-select">Gènere</label>
               <select id="genre-select">
                 <option value="todos">Tots</option>
-                <option value="rock">Rock</option>
-                <option value="electrónica">Electrònica</option>
-                <option value="jazz">Jazz</option>
+                <option value="Música Úrbana">Música Úrbana</option>
+                <option value="Pop">Pop</option>
+                <option value="Pop Rock">Pop Rock</option>
                 <!-- Otros géneros -->
               </select>
             </li>
@@ -140,6 +140,8 @@
         </div>
       </div>
 
+      <hr>
+
       <div class="row" id="events-container">
         <!-- Aquí se agregarán los elementos creados dinámicamente -->
       </div>
@@ -147,7 +149,7 @@
       <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Llamar a la función para cargar y procesar el JSON
-            procesarEventos();
+            generarListaEventos();
         });
       </script>
       
