@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Agregar un marcador en la ubicación obtenida con un icono personalizado
                 var ubicacionActualIcono = L.icon({
-                    iconUrl: 'assets/img/events/user-location.png', // Ruta a tu icono personalizado
+                    iconUrl: 'https://www.balearwave.com/assets/img/events/user-location.png', // Ruta a tu icono personalizado
                     iconSize: [32, 32], // Tamaño del icono
                     iconAnchor: [16, 32], // Punto de anclaje del icono
                     popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         // Usar un icono diferente para otros eventos
                         var iconoEvento = L.icon({
-                            iconUrl: 'assets/img/events/location.png', // Ruta a tu icono personalizado para eventos
+                            iconUrl: 'https://www.balearwave.com/assets/img/events/location.png', // Ruta a tu icono personalizado para eventos
                             iconSize: [32, 32], // Tamaño del icono
                             iconAnchor: [16, 32], // Punto de anclaje del icono
                             popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
@@ -102,7 +102,7 @@ function generarListaEventos() {
     var contenedorPrincipal = document.getElementById('events-container');
 
     // Realizar la solicitud para obtener los datos del JSON
-    fetch('assets/data/events.json')
+    fetch('https://www.balearwave.com/assets/data/events.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('No se pudo cargar el JSON: ' + response.status);
