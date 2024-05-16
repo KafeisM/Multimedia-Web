@@ -77,21 +77,16 @@ function procesarFestes() {
                 // Agregar el div de la columna al div de la fila
                 rowDiv.appendChild(colDiv);
 
-                // Variable para almacenar el elemento <p>
-                var pElement = document.createElement('p');
-                pElement.textContent = festa.description;
-
                 // Crear el elemento a para el botón de comprar entradas
                 const aElement = document.createElement('a');
-                aElement.setAttribute('href', festa.url);
+                aElement.setAttribute('href', 'festa.html?nombre=' + encodeURIComponent(festa.name));
                 aElement.setAttribute('class', 'btn btn-custom');
                 aElement.setAttribute('target', '_blank');
-                aElement.textContent = 'Saber més';
+                aElement.textContent = 'Descripció';
 
                 // Agregar todos los elementos al contenedor div principal
                 divContainer2.appendChild(h3Element);
                 divContainer2.appendChild(rowDiv);
-                divContainer2.appendChild(pElement);
                 divContainer2.appendChild(aElement);
 
                 // Agregar divContainer1 como hijo de divFestival
@@ -102,11 +97,12 @@ function procesarFestes() {
 
                 // Crear el elemento hr
                 const hrElement = document.createElement('hr');
+                const hrElement2 = document.createElement('hr');
 
                 contenedor.appendChild(divFesta);
                 contenedor.appendChild(hrElement);
+                contenedor.appendChild(hrElement2);
 
-                
             });
         })
         .catch(error => {
