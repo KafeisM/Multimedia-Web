@@ -124,12 +124,12 @@
 
       <hr>
       
-      <script src="https://www.balearwave.com/assets/js/events.js"></script>
+      <script src="assets/js/events.js"></script>
 
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
           <ul id="events-filters-2">
-            <li class="filter">Mapa</li>
+            <li class="filter" id="boton-mapa-events">Mapa</li>
           </ul>
         </div>
       </div>
@@ -137,9 +137,9 @@
       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
       
-      <div id="mapa" class="row" style="display: none;">
+      <div id="mapa-events" class="row" style="display: none;">
         <div class="col-lg-12 d-flex justify-content-center">
-          <div id="mapa-interno"></div>
+          <div id="mapa-interno-events"></div>
         </div>
       </div>
 
@@ -550,6 +550,25 @@
         <h2>Festes</h2>
         <p>Festes Balears</p>
       </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <ul id="events-filters-2">
+            <li class="filter" id="boton-mapa-festes">Mapa</li>
+          </ul>
+        </div>
+      </div>
+
+      <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+      
+      <div id="mapa-festes" class="row" style="display: none;">
+        <div class="col-lg-12 d-flex justify-content-center">
+          <div id="mapa-interno-festes"></div>
+        </div>
+      </div>
+
+      <hr>
 
       <div class="row" id="festes-container">
         

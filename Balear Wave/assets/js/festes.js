@@ -1,4 +1,101 @@
-// Función para procesar los datos del JSON y crear la estructura HTML de festivales
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtener referencia al botón de mapa
+    var botonMapa = document.querySelector('#boton-mapa-festes');
+
+    // Obtener referencia al contenedor del mapa
+    var mapaContainer = document.getElementById('mapa-festes');
+
+    // Agregar un event listener al botón de mapa
+    botonMapa.addEventListener('click', function() {
+        console.log("BOTO FESTES")
+        toggleMapVisibility();
+    });
+
+    // Función para alternar la visibilidad del mapa y obtener la geolocalización
+    function toggleMapVisibility() {
+        if (mapaContainer.style.display === 'none') {
+            mapaContainer.style.display = 'block';
+            obtenerGeolocalizacion(); // Obtener geolocalización y mostrar mapa al hacer clic
+        } else {
+            mapaContainer.style.display = 'none';
+        }
+    }
+
+    // Función para obtener la geolocalización del usuario y mostrar el mapa
+    function obtenerGeolocalizacion() {
+        // Verificar si el navegador soporta geolocalización
+        if (navigator.geolocation) {
+            // Solicitar la ubicación del usuario
+            navigator.geolocation.getCurrentPosition(function(position) {
+                // Obtener las coordenadas de latitud y longitud
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+
+                // Crear un mapa con Leaflet y establecer el centro en la ubicación obtenida
+                var map = L.map('mapa-interno-festes').setView([latitude, longitude], 10);
+
+                // Agregar la capa de OpenStreetMap al mapa
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                // Agregar un marcador en la ubicación obtenida con un icono personalizado
+                var ubicacionActualIcono = L.icon({
+                    iconUrl: 'https://www.balearwave.com/assets/img/events/user-location.png', // Ruta a tu icono personalizado
+                    iconSize: [32, 32], // Tamaño del icono
+                    iconAnchor: [16, 32], // Punto de anclaje del icono
+                    popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
+                });
+                L.marker([latitude, longitude], { icon: ubicacionActualIcono }).addTo(map)
+                    .bindPopup('Tu ubicación actual').openPopup();
+
+                // Marcar ubicaciones de eventos en el mapa
+                marcarUbicacionesFiestas(map, latitude, longitude);
+            }, function(error) {
+                // Manejar errores de geolocalización
+                console.error('Error obteniendo la ubicación:', error);
+            });
+        } else {
+            console.error('Geolocalización no es compatible con este navegador');
+        }
+    }
+
+    function marcarUbicacionesFiestas(map, lat, lon) {
+            
+        // Iterar sobre cada fiesta y marcar su ubicación en el mapa
+        todasLasFiestas.forEach(function(fiesta) {
+            // Obtener las coordenadas de latitud y longitud de la fiesta
+            var latitud = parseFloat(fiesta.geo.latitude);
+            var longitud = parseFloat(fiesta.geo.longitude);
+
+            console.log("LAT: ", latitud)
+            console.log("LON: ", longitud)
+    
+            // Verificar si se obtuvieron las coordenadas
+            if (!isNaN(latitud) && !isNaN(longitud)) {
+                // Crear un icono para la fiesta
+                var iconoFiesta = L.icon({
+                    iconUrl: 'https://www.balearwave.com/assets/img/events/location.png', // Ruta a tu icono personalizado para fiestas
+                    iconSize: [32, 32], // Tamaño del icono
+                    iconAnchor: [16, 32], // Punto de anclaje del icono
+                    popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
+                });
+    
+                // Agregar un marcador en la ubicación de la fiesta con el icono correspondiente
+                L.marker([latitud, longitud], { icon: iconoFiesta }).addTo(map)
+                    .bindPopup(fiesta.name).openPopup(); // Reemplaza "fiesta.name" con el nombre de tu propiedad en el JSON
+            } else {
+                console.log('No se encontraron coordenadas válidas para', fiesta.name);
+            }
+        });
+    }
+    
+    
+    
+});
+// Lista global para almacenar todas las fiestas
+var todasLasFiestas = [];
+
 function procesarFestes() {
     // Función interna para cargar y procesar el JSON
     fetch('https://www.festesbalears.com/json/Festes.json')
@@ -9,11 +106,16 @@ function procesarFestes() {
             return response.json();
         })
         .then(function (festes) {
+            // Verificar si festes es undefined
+            if (!festes || !festes.itemListElement) {
+                throw new Error('El JSON recuperado no tiene el formato esperado');
+            }
+
             // Obtener el contenedor donde se agregarán los elementos
             var contenedor = document.getElementById('festes-container');
 
             // Iterar sobre cada festival en el JSON y crear la estructura HTML
-            festes["itemListElement"].forEach(function(festa) {
+            festes.itemListElement.forEach(function(festa) {
                 // Crear div principal
                 var divFesta = document.createElement('div');
                 divFesta.classList.add('row');
@@ -103,9 +205,12 @@ function procesarFestes() {
                 contenedor.appendChild(hrElement);
                 contenedor.appendChild(hrElement2);
 
+                // Agregar la fiesta a la lista global
+                todasLasFiestas.push(festa);
             });
         })
         .catch(error => {
             console.error('Error al cargar el JSON:', error);
         });
 }
+

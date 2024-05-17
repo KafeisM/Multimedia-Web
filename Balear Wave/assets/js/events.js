@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Obtener referencia al botón de mapa
-    var botonMapa = document.querySelector('#events-filters-2');
+    var botonMapa = document.querySelector('#boton-mapa-events');
 
     // Obtener referencia al contenedor del mapa
-    var mapaContainer = document.getElementById('mapa');
+    var mapaContainer = document.getElementById('mapa-events');
 
     // Agregar un event listener al botón de mapa
     botonMapa.addEventListener('click', function() {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 var longitude = position.coords.longitude;
 
                 // Crear un mapa con Leaflet y establecer el centro en la ubicación obtenida
-                var map = L.map('mapa-interno').setView([latitude, longitude], 10);
+                var map = L.map('mapa-interno-events').setView([latitude, longitude], 10);
 
                 // Agregar la capa de OpenStreetMap al mapa
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
