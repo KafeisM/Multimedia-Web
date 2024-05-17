@@ -1748,6 +1748,17 @@ section .container {
   margin-bottom: 20px;
 }
 
+.btn-favorite {
+  background-color: #ffeb3b;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-favorite.active {
+  background-color: #ffc107;
+}
 
 #imagenContainer {
   margin-top: 20px;
