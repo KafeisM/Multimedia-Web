@@ -226,7 +226,7 @@
         "startDate": "2024-10-12T20:00",
         "location": {
           "@type": "Place",
-          "name": "Sala La Movida",
+          "name": "La Movida Palma",
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Mallorca",

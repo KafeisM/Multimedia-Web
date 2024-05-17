@@ -43,5 +43,18 @@
       "video": "https://balearwave.com/assets/img/Novetats/SamanthaHudsonVideo.mp4",
       "articleSection": "altres"
     }
+  ],
+  "newsHighlights": [
+    {
+      "image": "https://balearwave.com/assets/img/Header/MarcSegui.png",
+      "headline": "Nou disc de Marc Seguí",
+      "description": "Després d'una espera emocionant, Marc Seguí ens presenta el seu últim treball musical que captura l'ànima de les illes amb cada nota. Trobareu més informació a la part totes les Novetats"
+    },
+    {
+      "image": "https://balearwave.com/assets/img/Header/AntoniaFont.jpeg",
+      "headline": "Antònia Font, el grup balear més escoltat",
+      "description": "Antònia Font és un grup mallorquí, fundat el 1997, que és conegut per a totes les Balears. Trobareu més informació a la part totes les Novetats"
+    }
   ]
 }
+

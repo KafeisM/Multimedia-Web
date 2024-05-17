@@ -1036,29 +1036,99 @@ section .container {
   }
 }
 
+/* Estilos CSS mejorados para el carrusel */
+
 .carousel-container {
-  width: 100%; /* Adjust the width as needed */
-  margin: 50px auto; /* Center the carousel horizontally */
+  position: relative; /* Agrega posición relativa para que las flechas se posicionen correctamente */
+  width: 100%; /* Ajusta el ancho según sea necesario */
+  margin: 50px auto; /* Centra el carrusel horizontalmente */
+  border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
 }
 
 .carousel-item img {
-  max-width: 100%; /* Images will scale to fit width */
-  height: 400px;       /* Maintains aspect ratio */
-  filter: brightness(0.6); /* Oscurece la imagen al 30% */
+  max-width: 100%; /* Las imágenes se ajustarán al ancho */
+  height: 400px; /* Mantiene la relación de aspecto */
+  filter: brightness(0.6); /* Oscurece la imagen al 20% */
+  border-radius: 10px; /* Agrega bordes redondeados a las imágenes */
+  transition: filter 0.3s ease; /* Agrega una transición suave al cambio de brillo */
 }
 
+.carousel-item img:hover {
+  filter: brightness(1); /* Aclara la imagen al 100% al pasar el cursor sobre ella */
+}
+
+.carousel-indicators button {
+  background-color: #fff; /* Color de fondo para los indicadores */
+  border: none; /* Quita los bordes */
+  width: 10px; /* Ancho de los indicadores */
+  height: 10px; /* Altura de los indicadores */
+  margin: 0 5px; /* Espacio entre los indicadores */
+  border-radius: 50%; /* Hace que los indicadores sean circulares */
+}
+
+.carousel-indicators button.active {
+  background-color: #007bff; /* Color de fondo para el indicador activo */
+}
+
+.carousel-control-prev, .carousel-control-next {
+  position: absolute; /* Coloca las flechas en posición absoluta */
+  top: 50%; /* Posiciona las flechas verticalmente en el medio */
+  transform: translateY(-50%); /* Ajusta la posición verticalmente */
+  font-size: 24px; /* Tamaño de la flecha */
+  color: #000; /* Color de la flecha */
+  background-color: rgba(255, 255, 255, 0.5); /* Color de fondo para los controles */
+  border: none; /* Quita los bordes */
+  border-radius: 50%; /* Hace que los controles sean circulares */
+  width: 40px; /* Ancho de los controles */
+  height: 40px; /* Altura de los controles */
+  line-height: 40px; /* Centra el icono verticalmente */
+}
+
+.carousel-control-prev {
+  left: 0; /* Alinea la flecha izquierda al principio del contenedor */
+}
+
+.carousel-control-next {
+  right: 0; /* Alinea la flecha derecha al final del contenedor */
+}
+
+.carousel-caption h5 {
+  font-size: 30px; /* Tamaño del título más pequeño */
+}
+
+.carousel-caption p {
+  font-size: 18px; /* Tamaño del párrafo más pequeño */
+}
+
+
 @media (max-width: 1000px) {
+
   .carousel-container {
-    width: 100%; /* Adjust the width as needed */
-    margin: 50px auto; /* Center the carousel horizontally */
+    position: relative; /* Agrega posición relativa para que las flechas se posicionen correctamente */
+    width: 100%; /* Ajusta el ancho según sea necesario */
+    margin: 50px auto; /* Centra el carrusel horizontalmente */
+    border-radius: 10px; /* Agrega bordes redondeados al contenedor */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra suave */
   }
   
   .carousel-item img {
-    max-width: 100%; /* Images will scale to fit width */
-    height: 200px;       /* Maintains aspect ratio */
-    filter: brightness(0.6); /* Oscurece la imagen al 30% */
+    max-width: 100%; /* Las imágenes se ajustarán al ancho */
+    height: 200px; /* Mantiene la relación de aspecto */
+    filter: brightness(0.6); /* Oscurece la imagen al 20% */
+    border-radius: 10px; /* Agrega bordes redondeados a las imágenes */
+    transition: filter 0.3s ease; /* Agrega una transición suave al cambio de brillo */
+  }
+
+  .carousel-caption h5 {
+    font-size: 18px; /* Tamaño del título más pequeño */
+  }
+
+  .carousel-caption p {
+    font-size: 14px; /* Tamaño del párrafo más pequeño */
   }
 }
+
 
 /*--------------------------------------------------------------
 # Contact
@@ -1787,5 +1857,110 @@ body {
 }
 
 
+/*--------------------------------------------------------------
+# FESTIVALS
+--------------------------------------------------------------*/
 
+.festivals .content h3 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #18d26e;
+}
 
+.festivals .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.festivals .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.festivals .content ul strong {
+  margin-right: 10px;
+}
+
+.festivals .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #18d26e;
+  line-height: 0;
+}
+
+.festivals .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# FESTES
+--------------------------------------------------------------*/
+
+.festes .content h3 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #18d26e;
+}
+
+.festes .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.festes .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.festes .content ul strong {
+  margin-right: 10px;
+}
+
+.festes .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #18d26e;
+  line-height: 0;
+}
+
+.festes .content p:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+# VERBENES
+--------------------------------------------------------------*/
+
+.verbenes .content h3 {
+  font-weight: 700;
+  font-size: 30px;
+  color: #18d26e;
+}
+
+.verbenes .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.verbenes .content ul li {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.verbenes .content ul strong {
+  margin-right: 10px;
+}
+
+.verbenes .content ul i {
+  font-size: 16px;
+  margin-right: 5px;
+  color: #18d26e;
+  line-height: 0;
+}
+
+.verbenes .content p:last-child {
+  margin-bottom: 0;
+}
