@@ -10,7 +10,6 @@ function getParameterByName(name, url) {
 }
 
 // Función para cargar y procesar el JSON de festivales
-// Función para cargar y procesar el JSON de festivales
 function cargarFiesta() {
     // Obtener el nombre de la fiesta de los parámetros de la URL
     var nombreFiesta = getParameterByName('nombre');
@@ -35,7 +34,7 @@ function cargarFiesta() {
                 document.getElementById('imagen').src = 'https://www.festesbalears.com/' + fiestaEncontrada.image[0].contentUrl;
 
                 // Obtener los comentarios para esta fiesta
-                var comentarios = comentariosPorFiesta[nombreFiesta];
+                var comentarios = obtenerComentarios(nombreFiesta);
 
                 // Mostrar los comentarios en la página
                 var comentariosHTML = '';
@@ -73,6 +72,55 @@ function cargarFiesta() {
                 // Insertar el código HTML de los testimonios debajo de la descripción del evento
                 var descripcionElement = document.getElementById('descripcion');
                 descripcionElement.insertAdjacentHTML('afterend', testimoniosHTML);
+
+                // Agregar el formulario para nuevos comentarios
+                var formularioHTML = `
+                <div class="add-comment container">
+                    <div class="section-title">
+                        <h2>Afegeix un comentari</h2>
+                    </div>
+                    <form id="comment-form">
+                        <div class="form-group">
+                            <label for="username">Nom:</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="comment">Comentari:</label>
+                            <textarea id="comment" name="comment" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="image">Imatge:</label>
+                            <input type="file" id="image" name="image" accept="image/*">
+                        </div>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </div>`;
+
+                descripcionElement.insertAdjacentHTML('afterend', formularioHTML);
+
+                // Agregar el event listener para el formulario de comentarios
+                document.getElementById('comment-form').addEventListener('submit', function(event) {
+                    event.preventDefault();
+                    var usuario = document.getElementById('username').value;
+                    var comentario = document.getElementById('comment').value;
+                    var imagenInput = document.getElementById('image');
+
+                    if (imagenInput.files && imagenInput.files[0]) {
+                        var reader = new FileReader();
+
+                        reader.onload = function(e) {
+                            var imagen = e.target.result;
+                            agregarComentario(nombreFiesta, usuario, comentario, imagen);
+                            location.reload(); // Recargar la página para mostrar el nuevo comentario
+                        };
+
+                        reader.readAsDataURL(imagenInput.files[0]);
+                    } else {
+                        var imagenPredeterminada = 'assets/img/testimonials/nadie.webp';
+                        agregarComentario(nombreFiesta, usuario, comentario, imagenPredeterminada);
+                        location.reload(); // Recargar la página para mostrar el nuevo comentario
+                    }
+                });
             } else {
                 console.error('Fiesta no encontrada.');
             }
@@ -80,6 +128,28 @@ function cargarFiesta() {
         .catch(error => {
             console.error('Error al cargar el JSON:', error);
         });
+}
+
+// Función para obtener los comentarios desde el localStorage
+function obtenerComentarios(nombreFiesta) {
+    var comentariosGuardados = JSON.parse(localStorage.getItem('comentariosPorFiesta')) || {};
+    var comentariosPredeterminados = comentariosPorFiesta[nombreFiesta] || [];
+    var comentariosTotales = comentariosPredeterminados.concat(comentariosGuardados[nombreFiesta] || []);
+    return comentariosTotales;
+}
+
+// Función para agregar un nuevo comentario y guardarlo en el localStorage
+function agregarComentario(nombreFiesta, usuario, comentario, imagen) {
+    var comentariosGuardados = JSON.parse(localStorage.getItem('comentariosPorFiesta')) || {};
+    if (!comentariosGuardados[nombreFiesta]) {
+        comentariosGuardados[nombreFiesta] = [];
+    }
+    comentariosGuardados[nombreFiesta].push({
+        usuario: usuario,
+        comentario: comentario,
+        imagen: imagen
+    });
+    localStorage.setItem('comentariosPorFiesta', JSON.stringify(comentariosGuardados));
 }
 
 // Llamar a la función para cargar la fiesta cuando se carga la página
