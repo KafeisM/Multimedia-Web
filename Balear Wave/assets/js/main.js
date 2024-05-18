@@ -167,57 +167,6 @@
     }
 });
 
-/**
-* asrtistes filtros
-*/
-window.addEventListener('load', () => {
-  let artistesContainer = document.querySelector('.artistes-container');
-
-  if (artistesContainer) {
-    let artistesIsotope = new Isotope(artistesContainer, {
-      itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
-      layoutMode: 'fitRows'
-    });
-
-    artistesContainer.style.height = '1534px';
-
-    let artistesFilters = document.querySelectorAll('#artistes-flters li');
-    let genreFilters = document.querySelector('#genre-flters');
-
-    let currentFilters = ['*', '*']; // Inicializa los filtros con "todos"
-
-    artistesFilters.forEach((filter) => {
-      filter.addEventListener('click', function(e) {
-        e.preventDefault();
-        artistesFilters.forEach((el) => {
-          el.classList.remove('filter-active');
-        });
-        this.classList.add('filter-active');
-
-        currentFilters[0] = this.getAttribute('data-filter'); // Actualiza el filtro de artistas
-
-        let finalFilter = currentFilters.filter(f => f !== '*').join(''); // Ignora el filtro "todos"
-        finalFilter = finalFilter ? finalFilter : '*'; // Si no hay otros filtros, usa "todos"
-
-        artistesIsotope.arrange({
-          filter: finalFilter // Aplica el filtro final
-        });
-      });
-    });
-
-    genreFilters.addEventListener('change', function(e) {
-      currentFilters[1] = this.value; // Actualiza el filtro de género
-
-      let finalFilter = currentFilters.filter(f => f !== '*').join(''); // Ignora el filtro "todos"
-      finalFilter = finalFilter ? finalFilter : '*'; // Si no hay otros filtros, usa "todos"
-
-      artistesIsotope.arrange({
-        filter: finalFilter // Aplica el filtro final
-      });
-    });
-  }
-});
-
 
 /**
 * asrtistes cercador
@@ -249,62 +198,8 @@ window.addEventListener('load', () => {
   });
 });
 
-function procesarArtistas() {
-  // Función interna para cargar y procesar el JSON
-  fetch('https://www.balearwave.com/assets/data/events.json')
-      .then(response => {
-          if (!response.ok) {
-              throw new Error('No se pudo cargar el JSON: ' + response.status);
-          }
-          return response.json();
-      })
-      .then(function (data) {
-          // Obtener el contenedor donde se agregarán los elementos
-          var contenedor = document.querySelector('.artistes-container');
 
-          // Iterar sobre cada artista en el JSON y crear la estructura HTML
-          data.musicData.artists.forEach(function(artist) {
-              // Crear div principal
-              var divItem = document.createElement('div');
-              divItem.className = 'col-md-4 mb-4 filter-solistes filter-pop';
 
-              // Crear div para el icono
-              var iconBox = document.createElement('div');
-              iconBox.className = 'icon-box';
 
-              // Crear imagen del artista
-              var img = document.createElement('img');
-              img.src = artist.image;
-              img.className = 'card-img-top';
-              img.alt = artist.name;
-
-              // Crear div para el cuerpo de la tarjeta
-              var cardBody = document.createElement('div');
-              cardBody.className = 'card-body';
-
-              // Crear título del artista
-              var h5 = document.createElement('h5');
-              h5.className = 'card-title';
-              h5.textContent = artist.name;
-
-              // Crear párrafo para la descripción del artista
-              var p = document.createElement('p');
-              p.className = 'card-text';
-              p.textContent = artist.description;
-
-              // Crear botón para ver más detalles del artista
-              var a = document.createElement('a');
-              a.href = `artista.html?nombre=${encodeURIComponent(artist.name)}`;
-              a.className = 'btn btn-custom';
-              a.textContent = 'Veure més';
-
-              // Agregar todos los elementos creados al div principal
-              cardBody.append(h5, p, a);
-              iconBox.append(img, cardBody);
-              divItem.appendChild(iconBox);
-              contenedor.appendChild(divItem);
-          });
-      });
-}
 
 })()
