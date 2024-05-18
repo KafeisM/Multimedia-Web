@@ -619,6 +619,12 @@ section .container {
   z-index: 1;
 }
 
+/* Modificación para mostrar los testimonios uno debajo del otro */
+.testimonials .testimonials-list {
+  display: flex;
+  flex-direction: column;
+}
+
 .testimonials .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -634,6 +640,7 @@ section .container {
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #18d26e;
 }
+
 
 /*--------------------------------------------------------------
 # Resume
