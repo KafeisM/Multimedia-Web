@@ -1755,17 +1755,32 @@ section .container {
   margin-bottom: 20px;
 }
 
-.btn-favorite {
-  background-color: #ffeb3b;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  margin-top: 10px;
+.btn-container {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos del contenedor */
+  gap: 10px; /* Espacio entre los botones */
 }
 
-.btn-favorite.active {
-  background-color: #ffc107;
+/* Estilos para el botón de favoritos */
+.btn-favorite {
+  width: 30px; /* Ajusta el tamaño del botón */
+  height: 30px;
+  background-color: #a5e0c1; /* Fondo blanco por defecto */
+  clip-path: polygon(
+      50% 0%, 61% 35%, 98% 35%, 
+      68% 57%, 79% 91%, 50% 70%, 
+      21% 91%, 32% 57%, 2% 35%, 
+      39% 35%
+  );
+  transition: background-color 0.3s ease;
+  cursor: pointer;
 }
+
+.btn-favorite:hover {
+  background-color: #35e888; /* Cambiar el color de fondo al pasar el mouse */
+  color: #000000; /* Cambiar el color del texto al pasar el mouse */
+}
+
 
 #imagenContainer {
   margin-top: 20px;

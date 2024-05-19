@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var contenedorPrincipal = document.getElementById('events-container');
 
         // Realizar la solicitud para obtener los datos del JSON
-        fetch('https://www.balearwave.com/assets/data/events.json')
+        fetch('assets/data/events.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No se pudo cargar el JSON: ' + response.status);
@@ -179,32 +179,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Función para mostrar eventos en el contenedor principal
     function mostrarEventos(eventos, contenedorPrincipal) {
         // Limpiar los eventos anteriores
         contenedorPrincipal.innerHTML = '';
-
+    
         // Iterar sobre cada evento y mostrarlo
         eventos.forEach(function(evento) {
             // Crear elemento div para el evento
             var divEvento = document.createElement('div');
             divEvento.classList.add('events-item');
-
+    
             // Crear elemento imagen para el evento
             var imgEvento = document.createElement('img');
             imgEvento.src = evento.image;
-
+    
             // Crear elemento div para el contenido del evento
             var divContenido = document.createElement('div');
             divContenido.classList.add('events-content');
-
+    
             // Crear título del evento
             var tituloEvento = document.createElement('h3');
             tituloEvento.textContent = evento.name;
-
+    
             // Crear lista para detalles del evento
             var listaDetalles = document.createElement('ul');
-
+    
             // Crear elementos de detalles del evento
             var detalles = {
                 "Data": new Date(evento.startDate).toLocaleDateString(),
@@ -212,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 "Preu": evento.offers.price + " " + evento.offers.priceCurrency,
                 "Lloc": evento.location.name
             };
-
+    
             // Agregar detalles del evento a la lista
             for (var key in detalles) {
                 if (detalles.hasOwnProperty(key)) {
@@ -226,7 +225,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     listaDetalles.appendChild(li);
                 }
             }
-
+    
+            // Crear contenedor para los botones
+            var divBtnContainer = document.createElement('div');
+            divBtnContainer.classList.add('btn-container');
+    
             // Crear botón para obtener entradas
             var btnEntradas = document.createElement('button');
             btnEntradas.textContent = 'Entrades';
@@ -234,10 +237,9 @@ document.addEventListener('DOMContentLoaded', function() {
             btnEntradas.addEventListener('click', function() {
                 window.location.href = evento.offers.url;
             });
-
+    
             // Crear botón para marcar como favorito
             var btnFavorito = document.createElement('button');
-            btnFavorito.textContent = 'Favorito';
             btnFavorito.classList.add('btn-favorite');
             if (favoritos.some(fav => fav.name === evento.name)) {
                 btnFavorito.classList.add('active');
@@ -245,25 +247,29 @@ document.addEventListener('DOMContentLoaded', function() {
             btnFavorito.addEventListener('click', function() {
                 toggleFavorito(evento, btnFavorito);
             });
-
+    
+            // Agregar botones al contenedor de botones
+            divBtnContainer.appendChild(btnEntradas);
+            divBtnContainer.appendChild(btnFavorito);
+    
             // Agregar elementos al contenido del evento
             divContenido.appendChild(tituloEvento);
             divContenido.appendChild(listaDetalles);
-            divContenido.appendChild(btnEntradas);
-            divContenido.appendChild(btnFavorito);
-
+            divContenido.appendChild(divBtnContainer); // Agregar el contenedor de botones
+    
             // Agregar imagen y contenido al div del evento
             divEvento.appendChild(imgEvento);
             divEvento.appendChild(divContenido);
-
+    
             // Agregar el evento al contenedor principal
             contenedorPrincipal.appendChild(divEvento);
-
+    
             // Agregar un separador horizontal
             var hr = document.createElement('hr');
             contenedorPrincipal.appendChild(hr);
         });
     }
+    
 
     // Función para manejar el filtro de precio
     function manejarFiltroPrecio() {
