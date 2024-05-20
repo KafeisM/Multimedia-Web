@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Agregar un marcador en la ubicación obtenida con un icono personalizado
                 var ubicacionActualIcono = L.icon({
-                    iconUrl: 'https://www.balearwave.com/assets/img/events/user-location.png', // Ruta a tu icono personalizado
+                    iconUrl: 'assets/img/events/user-location.png', // Ruta a tu icono personalizado
                     iconSize: [32, 32], // Tamaño del icono
                     iconAnchor: [16, 32], // Punto de anclaje del icono
                     popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     } else {
                         // Usar un icono diferente para otros eventos
                         var iconoEvento = L.icon({
-                            iconUrl: 'https://www.balearwave.com/assets/img/events/location.png', // Ruta a tu icono personalizado para eventos
+                            iconUrl: 'assets/img/events/location.png', // Ruta a tu icono personalizado para eventos
                             iconSize: [32, 32], // Tamaño del icono
                             iconAnchor: [16, 32], // Punto de anclaje del icono
                             popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
     generarListaEventos();
 
     // Obtener referencia al botón de favoritos
-    var btnFavoritos = document.getElementById('favorites-filter');
+    var btnFavoritos = document.getElementById('fav-filter');
 
     // Evento para mostrar solo favoritos
     btnFavoritos.addEventListener('click', function() {
