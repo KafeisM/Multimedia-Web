@@ -1693,6 +1693,16 @@ section .container {
   outline: none;
 }
 
+#date-input-2 {
+  font-size: 14px;
+  padding: 5px 16px; /* Reducción del padding vertical */
+  border-radius: 4px;
+  background: #808080; /* Fondo gris */
+  color: #ffffff; /* Color de texto blanco */
+  border: none;
+  outline: none;
+}
+
 /*----------------------------------------*/
 
 #search-filter label {

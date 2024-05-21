@@ -109,11 +109,16 @@
               <label for="price-range">Preu</label>
               <input type="range" id="price-range" name="price" min="0" max="100" value="50">
               <span id="price-value">50€</span>
+            </li>            
+            <li id="start-date-input" class="date-filter">
+              <label for="date-input"></label>
+              <input type="date" id="date-input" name="start-date">
             </li>
-            <li id="date-filter" class="date-filter">
-              <label for="date-input">Data</label>
-              <input type="date" id="date-input" name="date">
+            <li id="end-date-input" class="date-filter">
+                <label for="date-input"></label>
+                <input type="date" id="date-input-2" name="end-date">
             </li>
+          
             <li id="search-filter" class="search-filter">
               <label for="search-input">Cantant/Grup</label>
               <input type="text" id="search-input" name="search" placeholder="Buscar...">
@@ -126,8 +131,6 @@
       </div>
 
       <hr>
-      
-      <script src="assets/js/events.js"></script>
 
       <div class="row">
         <div class="col-lg-12 d-flex justify-content-center">
@@ -148,17 +151,11 @@
 
       <hr>
 
-      
       <div class="row" id="events-container">
         Aquí se agregarán los elementos creados dinámicamente
       </div>
 
-      <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Llamar a la función para cargar y procesar el JSON
-            generarListaEventos();
-        });
-      </script>
+      <script src="assets/js/events.js"></script>
       
       <hr>
 
@@ -578,7 +575,7 @@
         
       </div>
 
-      <script src="https://www.balearwave.com/assets/js/festes.js"></script>
+      <script src="assets/js/festes.js"></script>
       <script>
           document.addEventListener('DOMContentLoaded', () => {
               // Llamar a la función para cargar y procesar el JSON

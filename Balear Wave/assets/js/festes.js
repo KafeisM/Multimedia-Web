@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!isNaN(latitud) && !isNaN(longitud)) {
                 // Crear un icono para la fiesta
                 var iconoFiesta = L.icon({
-                    iconUrl: 'https://www.balearwave.com/assets/img/events/location.png', // Ruta a tu icono personalizado para fiestas
+                    iconUrl: 'assets/img/events/location.png', // Ruta a tu icono personalizado para fiestas
                     iconSize: [32, 32], // Tamaño del icono
                     iconAnchor: [16, 32], // Punto de anclaje del icono
                     popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
