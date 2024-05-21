@@ -118,20 +118,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Variable global para almacenar todos los eventos
     var todosLosEventos = [];
     var favoritos = JSON.parse(localStorage.getItem('favoritos')) || []; // Cargar favoritos desde localStorage
+    var artistas;
 
-    // Objeto para almacenar los valores de los filtros
+    // Inicializa los filtros
     var filtros = {
         genero: 'todos',
-        precio: 100, // Asume el valor máximo del filtro de precio
+        precio: Infinity,
         fechaInicio: null,
         fechaFin: null,
-        nombre: ''
+        nombre: '',
+        favoritos: false
     };
 
-    
     function generarListaEventos() {
         var contenedorPrincipal = document.getElementById('events-container');
-    
+
         fetch('assets/data/events.json')
             .then(response => {
                 if (!response.ok) {
@@ -142,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(function(data) {
                 todosLosEventos = data.musicData.events;
                 mostrarEventos(todosLosEventos, contenedorPrincipal);
-    
+
                 manejarFiltroGenero(data);
                 manejarFiltroPrecio();
                 manejarFiltroFecha();
@@ -152,8 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 console.error('Error al cargar el JSON:', error);
             });
     }
-    
-    
+
     function manejarFiltroGenero(data) {
         var selectGenero = document.getElementById('genre-select');
         selectGenero.innerHTML = '';
@@ -161,8 +161,8 @@ document.addEventListener('DOMContentLoaded', () => {
         optionTodos.value = 'todos';
         optionTodos.textContent = 'Tots';
         selectGenero.appendChild(optionTodos);
-    
-        var artistas = data.musicData.artists;
+
+        artistas = data.musicData.artists;
         var generosUnicos = [...new Set(artistas.map(artist => artist.genre))];
         generosUnicos.forEach(function(genero) {
             var optionGenero = document.createElement('option');
@@ -172,16 +172,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         selectGenero.addEventListener('change', function() {
             filtros.genero = selectGenero.value;
-            console.log("Genero Seleccionad: ", selectGenero.value);
+            console.log("Genero Seleccionado: ", selectGenero.value);
             aplicarFiltros();
         });
     }
-    
+
     function mostrarEventos(eventos, contenedorPrincipal) {
         contenedorPrincipal.innerHTML = '';
         eventos.forEach(function(evento) {
             console.log("Evento:", evento.name);
-    
+
             var divEvento = document.createElement('div');
             divEvento.classList.add('events-item');
             var imgEvento = document.createElement('img');
@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Preu": evento.offers.price + " " + evento.offers.priceCurrency,
                 "Lloc": evento.location.name
             };
-    
+
             for (var key in detalles) {
                 if (detalles.hasOwnProperty(key)) {
                     var li = document.createElement('li');
@@ -210,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     listaDetalles.appendChild(li);
                 }
             }
-    
+
             var divBtnContainer = document.createElement('div');
             divBtnContainer.classList.add('btn-container');
             var btnEntradas = document.createElement('button');
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnEntradas.addEventListener('click', function() {
                 window.location.href = evento.offers.url;
             });
-    
+
             var btnFavorito = document.createElement('button');
             btnFavorito.classList.add('btn-favorite');
             if (favoritos.some(fav => fav.name === evento.name)) {
@@ -228,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnFavorito.addEventListener('click', function() {
                 toggleFavorito(evento, btnFavorito);
             });
-    
+
             divBtnContainer.appendChild(btnEntradas);
             divBtnContainer.appendChild(btnFavorito);
             divContenido.appendChild(tituloEvento);
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contenedorPrincipal.appendChild(divEvento);
             var hr = document.createElement('hr');
             contenedorPrincipal.appendChild(hr);
-    
+
             // Logs para los valores de los filtros
             console.log("Filtros:");
             console.log("Genero:", filtros.genero);
@@ -249,14 +249,11 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log("Nombre:", filtros.nombre);
         });
     }
-    
 
-    
-    
     function manejarFiltroPrecio() {
         var inputPrecio = document.getElementById('price-range');
         var spanPrecio = document.getElementById('price-value');
-    
+
         inputPrecio.addEventListener('input', function() {
             filtros.precio = parseFloat(inputPrecio.value);
             spanPrecio.textContent = filtros.precio + '€';
@@ -267,21 +264,21 @@ document.addEventListener('DOMContentLoaded', () => {
     function manejarFiltroFecha() {
         var dateI = document.getElementById('date-input');
         var dateF = document.getElementById('date-input-2');
-    
+
         dateI.addEventListener('change', function() {
-            filtros.fechaInicio = new Date(dateI.value);
+            filtros.fechaInicio = dateI.value ? new Date(dateI.value) : null;
             aplicarFiltros();
         });
-    
+
         dateF.addEventListener('change', function() {
-            filtros.fechaFin = new Date(dateF.value);
+            filtros.fechaFin = dateF.value ? new Date(dateF.value) : null;
             aplicarFiltros();
         });
     }
-    
+
     function manejarFiltroPorNombre() {
         var inputNombre = document.getElementById('search-input');
-    
+
         inputNombre.addEventListener('input', function() {
             filtros.nombre = inputNombre.value.toLowerCase();
             aplicarFiltros();
@@ -290,58 +287,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function aplicarFiltros() {
         var eventosFiltrados = todosLosEventos.filter(function(evento) {
-            var alguno = evento.performer.some(function(artista) {
-                // Verificar si el objeto tiene la propiedad genre antes de compararlo
-                if (artista.genre !== undefined) {
-                    console.log(artista.genre, filtros.genero);
-                    return artista.genre === filtros.genero;
-                } else {
-                    // Manejar el caso donde artista.genre es undefined (si es necesario)
-                    console.log("artista.genre es undefined");
-                    return false; // O cualquier otra lógica que necesites
-                }
+            var coincideGenero = filtros.genero === 'todos' || evento.performer.some(function(performer) {
+                var artista = artistas.find(art => art.name === performer.name);
+                return artista && artista.genre.toLowerCase() === filtros.genero;
             });
-            console.log("ALGUNO: ",alguno);
-            var coincideGenero = filtros.genero === 'todos' || alguno;
-    
+
             var coincidePrecio = evento.offers.price <= filtros.precio;
-    
+
             var fechaEvento = new Date(evento.startDate);
             var coincideFecha = (!filtros.fechaInicio || fechaEvento >= filtros.fechaInicio) &&
                                 (!filtros.fechaFin || fechaEvento <= filtros.fechaFin);
-    
+
             var coincideNombre = evento.name.toLowerCase().includes(filtros.nombre);
-    
-            return coincideGenero && coincidePrecio && coincideFecha && coincideNombre;
+            var coincideFavoritos = filtros.favoritos ? favoritos.includes(evento.name) : true; // Nuevo filtro para favoritos
+
+            return coincideGenero && coincidePrecio && coincideFecha && coincideNombre && coincideFavoritos;
         });
-        console.log("FILTRADOS: ",eventosFiltrados);
+
+        console.log("FILTRADOS: ", eventosFiltrados);
         mostrarEventos(eventosFiltrados, document.getElementById('events-container'));
     }
-    
-    
-    
-    // Función para alternar el estado de favorito de un evento
-    function toggleFavorito(evento, btn) {
-        var index = favoritos.findIndex(fav => fav.name === evento.name);
+
+    function toggleFavorito(evento) {
+        var index = favoritos.indexOf(evento.name);
         if (index > -1) {
             favoritos.splice(index, 1);
-            btn.classList.remove('active');
         } else {
-            favoritos.push(evento);
-            btn.classList.add('active');
+            favoritos.push(evento.name);
         }
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
-    
-    // Obtener referencia al botón de favoritos
+
     var btnFavoritos = document.getElementById('fav-filter');
-    
-    // Evento para mostrar solo favoritos
+
     btnFavoritos.addEventListener('click', function() {
-        mostrarEventos(favoritos, document.getElementById('events-container'));
+        this.classList.toggle('active');
+        filtros.favoritos = this.classList.contains('active'); // Actualizar el filtro de favoritos
+        aplicarFiltros();
     });
 
     generarListaEventos();
-    
+
     
 });

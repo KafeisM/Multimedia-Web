@@ -1622,7 +1622,9 @@ section .container {
 
 .price-filter,
 .genre-filter,
-#genre-filter {
+#genre-filter,
+.fav-filter,
+#fav.filter {
   display: flex;
   align-items: center;
 }
@@ -1642,6 +1644,27 @@ section .container {
 }
 
 #genre-filter label:hover {
+  background: #18d26e; /* Fondo verde al pasar el cursor */
+}
+
+#fav-filter label {
+  display: inline-block;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+#fav-filter label:hover {
+  background: #18d26e; /* Fondo verde al pasar el cursor */
+}
+
+#fav-filter label.active {
   background: #18d26e; /* Fondo verde al pasar el cursor */
 }
 
