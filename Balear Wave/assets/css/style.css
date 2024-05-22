@@ -1544,6 +1544,47 @@ section .container {
   color: #000000; /* Cambiar el color del texto al pasar el mouse */
 }
 
+/* Estilo base para el botón de favoritos */
+.btn-fav {
+  background-color: #18d26e;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  margin-top: 10px;
+}
+
+/* Estilo cuando el artista no está en favoritos */
+.btn-fav-not-added {
+  background-color: #18d26e;
+  color: #fff;
+}
+
+/* Estilo cuando el artista está en favoritos */
+.btn-fav-added {
+  background-color: #ffcc00;
+  color: #fff;
+}
+
+/* Estilo cuando el botón está en hover */
+.btn-fav:hover {
+  background-color: #35e888;
+  color: #fff;
+}
+
+/* Estilo cuando el botón está activo */
+.btn-fav:active {
+  background-color: #15b261;
+  color: #e0e0e0;
+}
+
+
+
 
 
 /*--------------------------------------------------------------

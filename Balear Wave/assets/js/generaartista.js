@@ -1,125 +1,136 @@
-document.addEventListener('DOMContentLoaded', () => { 
-let artistesIsotope; // Mueve la definición de artistesIsotope a un ámbito superior
+document.addEventListener('DOMContentLoaded', () => {
+    let artistesIsotope; // Mueve la definición de artistesIsotope a un ámbito superior
 
-function procesarArtistas() {
-    if (document.querySelector('.artistes-container').children.length > 0) {
-        // Si los artistas ya se han cargado, resuelve la promesa inmediatamente
-        return Promise.resolve();
-    }
-    // Devuelve una promesa que se resuelve cuando se han cargado todos los artistas
-    return new Promise((resolve, reject) => {
-        fetch('https://www.balearwave.com/assets/data/events.json')
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('No se pudo cargar el JSON: ' + response.status);
-                }
-                return response.json();
-            })
-            .then(function (data) {
-                // Obtener el contenedor donde se agregarán los elementos
-                var contenedor = document.querySelector('.artistes-container');
-
-                contenedor.style.height = 'auto';
-
-                // Iterar sobre cada artista en el JSON y crear la estructura HTML
-                data.musicData.artists.forEach(function(artist) {
-                    // Crear div principal
-                    var divItem = document.createElement('div');
-
-                    // Establecer className en función de los datos del artista
-                    var genreClass = '';
-                    if (artist.genre === 'pop') {
-                        genreClass = 'filter-pop';
-                    } else if (artist.genre === 'rock') {
-                        genreClass = 'filter-rock';
+    function procesarArtistas() {
+        if (document.querySelector('.artistes-container').children.length > 0) {
+            // Si los artistas ya se han cargado, resuelve la promesa inmediatamente
+            return Promise.resolve();
+        }
+        // Devuelve una promesa que se resuelve cuando se han cargado todos los artistas
+        return new Promise((resolve, reject) => {
+            fetch('https://www.balearwave.com/assets/data/events.json')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('No se pudo cargar el JSON: ' + response.status);
                     }
+                    return response.json();
+                })
+                .then(function (data) {
+                    // Obtener el contenedor donde se agregarán los elementos
+                    var contenedor = document.querySelector('.artistes-container');
 
-                    var typeClass = '';
-                    if (artist.type === 'solista') {
-                        typeClass = 'filter-solistes';
-                    } else if (artist.type === 'grupo') {
-                        typeClass = 'filter-grups';
-                    }
+                    // Iterar sobre cada artista en el JSON y crear la estructura HTML
+                    data.musicData.artists.forEach(function(artist) {
+                        // Crear div principal
+                        var divItem = document.createElement('div');
 
-                    divItem.className = 'col-md-4 mb-4 ' + genreClass + ' ' + typeClass;
+                        // Establecer className en función de los datos del artista
+                        var genreClass = '';
+                        if (artist.genre === 'pop') {
+                            genreClass = 'filter-pop';
+                        } else if (artist.genre === 'rock') {
+                            genreClass = 'filter-rock';
+                        }
 
-                    // Crear div para el icono
-                    var iconBox = document.createElement('div');
-                    iconBox.className = 'icon-box';
+                        var typeClass = '';
+                        if (artist.type === 'solista') {
+                            typeClass = 'filter-solistes';
+                        } else if (artist.type === 'grupo') {
+                            typeClass = 'filter-grups';
+                        }
 
-                    // Crear imagen del artista
-                    var img = document.createElement('img');
-                    img.src = artist.image;
-                    img.className = 'card-img-top';
-                    img.alt = artist.name;
+                        divItem.className = 'col-md-4 mb-4 ' + genreClass + ' ' + typeClass;
 
-                    // Crear div para el cuerpo de la tarjeta
-                    var cardBody = document.createElement('div');
-                    cardBody.className = 'card-body';
+                        // Crear div para el icono
+                        var iconBox = document.createElement('div');
+                        iconBox.className = 'icon-box';
 
-                    // Crear título del artista
-                    var h5 = document.createElement('h5');
-                    h5.className = 'card-title';
-                    h5.textContent = artist.name;
+                        // Crear imagen del artista
+                        var img = document.createElement('img');
+                        img.src = artist.image;
+                        img.className = 'card-img-top';
+                        img.alt = artist.name;
 
-                    // Crear párrafo para la descripción del artista
-                    var p = document.createElement('p');
-                    p.className = 'card-text';
-                    p.textContent = artist.description;
+                        // Crear div para el cuerpo de la tarjeta
+                        var cardBody = document.createElement('div');
+                        cardBody.className = 'card-body';
 
-                    // Crear botón para ver más detalles del artista
-                    var a = document.createElement('a');
-                    a.href = `artista.html?nombre=${encodeURIComponent(artist.name)}`;
-                    a.className = 'btn btn-custom';
-                    a.textContent = 'Veure més';
+                        // Crear título del artista
+                        var h5 = document.createElement('h5');
+                        h5.className = 'card-title';
+                        h5.textContent = artist.name;
 
-                    // Crear botón para añadir a favoritos
-                    var favButton = document.createElement('button');
-                    favButton.textContent = 'Añadir a favoritos';
-                    favButton.addEventListener('click', function() {
-                        // Guarda el nombre del artista en localStorage
-                        localStorage.setItem(artist.name, true);
-                        alert(`${artist.name} añadido a favoritos`);
+                        // Crear párrafo para la descripción del artista
+                        var p = document.createElement('p');
+                        p.className = 'card-text';
+                        p.textContent = artist.description;
+
+                        // Crear contenedor para los botones
+                        var btnContainer = document.createElement('div');
+                        btnContainer.className = 'btn-container';
+
+                        // Crear botón para ver más detalles del artista
+                        var a = document.createElement('a');
+                        a.href = `artista.html?nombre=${encodeURIComponent(artist.name)}`;
+                        a.className = 'btn btn-custom';
+                        a.textContent = 'Veure més';
+
+                        // Crear botón para añadir a favoritos
+                        var favButton = document.createElement('button');
+                        favButton.className = 'btn btn-fav ' + (localStorage.getItem(artist.name) ? 'btn-fav-added' : 'btn-fav-not-added');
+                        favButton.textContent = localStorage.getItem(artist.name) ? 'Eliminar de favoritos' : 'Añadir a favoritos';
+                        favButton.addEventListener('click', function() {
+                            if (localStorage.getItem(artist.name)) {
+                                // Eliminar de favoritos
+                                localStorage.removeItem(artist.name);
+                                favButton.textContent = 'Añadir a favoritos';
+                                favButton.classList.remove('btn-fav-added');
+                                favButton.classList.add('btn-fav-not-added');
+                                alert(`${artist.name} eliminado de favoritos`);
+                            } else {
+                                // Añadir a favoritos
+                                localStorage.setItem(artist.name, true);
+                                favButton.textContent = 'Eliminar de favoritos';
+                                favButton.classList.remove('btn-fav-not-added');
+                                favButton.classList.add('btn-fav-added');
+                                alert(`${artist.name} añadido a favoritos`);
+                            }
+                        });
+
+                        // Agregar los botones al contenedor de botones
+                        btnContainer.append(a, favButton);
+
+                        // Agregar todos los elementos creados al div principal
+                        cardBody.append(h5, p, btnContainer);
+                        iconBox.append(img, cardBody);
+                        divItem.appendChild(iconBox);
+                        contenedor.appendChild(divItem);
                     });
 
-                    // Agregar todos los elementos creados al div principal
-                    cardBody.append(h5, p, a, favButton);
-                    iconBox.append(img, cardBody);
-                    divItem.appendChild(iconBox);
-                    contenedor.appendChild(divItem);
+                    resolve();
+                })
+                .catch(error => {
+                    reject('Hubo un error al cargar los artistas: ' + error);
                 });
-
-                resolve();
-            })
-            .catch(error => {
-                reject('Hubo un error al cargar los artistas: ' + error);
-            });
-    });
-}
-
-procesarArtistas().then(() => {
-    // Después de generar los artistas, emite un evento personalizado
-    var event = new CustomEvent('artistasCargados');
-    window.dispatchEvent(event);
-}).catch(error => {
-    console.error('Hubo un error al cargar los artistas: ', error);
-});
-
-/**
-* asrtistes filtros
-*/
-window.addEventListener('load', () => {
-    let artistesContainer = document.querySelector('.artistes-container');
-
-    if (artistesContainer) {
-        artistesIsotope = new Isotope(artistesContainer, {
-            itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
-            layoutMode: 'fitRows',
-            filter: '*' // Muestra todos los elementos por defecto
         });
+    }
 
-        artistesContainer.style.height = 'auto';
+    function inicializarIsotope() {
+        let artistesContainer = document.querySelector('.artistes-container');
+    
+        if (artistesContainer) {
+            artistesIsotope = new Isotope(artistesContainer, {
+                itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
+                layoutMode: 'fitRows',
+                filter: '*' // Establece el filtro inicial como "todos"
+            });
+        
+            artistesContainer.style.height = '1500px'
+        }
+    }
+    
 
+    function configurarFiltros() {
         let artistesFilters = document.querySelectorAll('#artistes-flters li');
         let genreFilters = document.querySelector('#genre-flters');
 
@@ -166,5 +177,25 @@ window.addEventListener('load', () => {
             });
         });
     }
+
+    procesarArtistas().then(() => {
+        inicializarIsotope();
+        configurarFiltros();
+        // Después de inicializar Isotope y configurar filtros, emite un evento personalizado
+        var event = new CustomEvent('artistasCargados');
+        window.dispatchEvent(event);
+    }).catch(error => {
+        console.error('Hubo un error al cargar los artistas: ', error);
+    });
+
+    /**
+    * asrtistes filtros
+    */
+    window.addEventListener('load', () => {
+        let artistesContainer = document.querySelector('.artistes-container');
+
+        if (artistesContainer) {
+            artistesContainer.style.height = 'auto';
+        }
+    });
 });
-})
