@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                         // Crear contenedor para los botones
                         var btnContainer = document.createElement('div');
-                        btnContainer.className = 'btn-container';
+                        btnContainer.className = 'row btn-container';
 
                         // Crear botón para ver más detalles del artista
                         var a = document.createElement('a');
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
             filter: '*' // Establece el filtro inicial como "todos"
         });
     
-        artistesContainer.style.height = '1500px'
+        artistesContainer.style.height = '1700px'
     }
 }
 

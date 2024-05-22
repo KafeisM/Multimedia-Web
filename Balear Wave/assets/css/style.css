@@ -1398,8 +1398,8 @@ section .container {
 }
 
 .artistes .icon-box:hover {
-  background: #18d26e;
-  border-color: #18d26e;
+  background: #474747;
+  border-color: #474747;
 }
 
 .artistes .icon-box:hover .icon {
@@ -1407,11 +1407,11 @@ section .container {
 }
 
 .artistes .icon-box:hover .icon i {
-  color: #18d26e;
+  color: #474747;
 }
 
 .artistes .icon-box:hover .icon::before {
-  background: #35e888;
+  background: #474747;
 }
 
 .artistes .icon-box:hover h4 a,
@@ -1567,7 +1567,7 @@ section .container {
 
 /* Estilo cuando el artista está en favoritos */
 .btn-fav-added {
-  background-color: #ffcc00;
+  background-color: #d6b739;
   color: #fff;
 }
 
@@ -1582,6 +1582,26 @@ section .container {
   background-color: #15b261;
   color: #e0e0e0;
 }
+
+#back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+#back-button:hover {
+  background-color: #18d26e;
+}
+
 
 
 

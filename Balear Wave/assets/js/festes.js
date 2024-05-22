@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Botón de volver atrás
+    document.getElementById('back-button').addEventListener('click', function() {
+        window.location.href = 'index.html#festes';
+    
+    });
+    
     // Obtener referencia al botón de mapa
     var botonMapa = document.querySelector('#boton-mapa-festes');
 
@@ -183,7 +190,7 @@ function procesarFestes() {
                 const aElement = document.createElement('a');
                 aElement.setAttribute('href', 'festa.html?nombre=' + encodeURIComponent(festa.name));
                 aElement.setAttribute('class', 'btn btn-custom');
-                aElement.setAttribute('target', '_blank');
+               
                 aElement.textContent = 'Descripció';
 
                 // Agregar todos los elementos al contenedor div principal
