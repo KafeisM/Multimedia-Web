@@ -199,11 +199,9 @@ function procesarFestes() {
 
                 // Crear el elemento hr
                 const hrElement = document.createElement('hr');
-                const hrElement2 = document.createElement('hr');
 
                 contenedor.appendChild(divFesta);
                 contenedor.appendChild(hrElement);
-                contenedor.appendChild(hrElement2);
 
                 // Agregar la fiesta a la lista global
                 todasLasFiestas.push(festa);
