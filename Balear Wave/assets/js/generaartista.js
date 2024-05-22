@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', () => { 
 let artistesIsotope; // Mueve la definición de artistesIsotope a un ámbito superior
 
 function procesarArtistas() {
@@ -166,3 +167,4 @@ window.addEventListener('load', () => {
         });
     }
 });
+})
