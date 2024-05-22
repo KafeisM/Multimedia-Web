@@ -1,9 +1,7 @@
 // Función para procesar los datos del JSON y crear la estructura HTML de festivales
 function procesarFestivals() {
     // Función interna para cargar y procesar el JSON
-    fetch('https://www.balearsfestivals.com/json/festivales.json', {
-        mode : "no-cors"
-    })
+    fetch('https://www.balearsfestivals.com/json/festivales.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('No se pudo cargar el JSON: ' + response.status);
@@ -11,8 +9,9 @@ function procesarFestivals() {
             return response.json();
         })
         .then(function (festivales) {
+
             // Obtener el contenedor donde se agregarán los elementos
-            var contenedor = document.getElementById('festivales-container');
+            var contenedor = document.getElementById('festivals-container');
 
             // Iterar sobre cada festival en el JSON y crear la estructura HTML
             festivales["itemListElement"].forEach(function(festival) {
@@ -20,8 +19,7 @@ function procesarFestivals() {
                 var divFestival = document.createElement('div');
                 divFestival.classList.add('row');
 
-                // Suponiendo que `data` es el objeto JSON que contiene la lista `itemListElement`
-                // Accede a la URL de la imagen
+                // Acceder a la URL de la imagen
                 const imageUrl = festival.image[0].url;
 
                 // Crear el contenedor div con clase "col-lg-4" y atributo "data-aos"
@@ -31,7 +29,7 @@ function procesarFestivals() {
 
                 // Crear la etiqueta img con el atributo src y clase "img-fluid"
                 const imgElement = document.createElement('img');
-                imgElement.setAttribute('src', imageUrl); // Utiliza la URL de la imagen obtenida
+                imgElement.setAttribute('src', imageUrl);
                 imgElement.classList.add('img-fluid');
                 imgElement.setAttribute('alt', '');
 
@@ -118,6 +116,7 @@ function procesarFestivals() {
                 // Agregar divContainer2 como hijo de divFestival
                 divFestival.appendChild(divContainer2);
 
+                // Agregar divFestival al contenedor principal
                 contenedor.appendChild(divFestival);
             });
         })

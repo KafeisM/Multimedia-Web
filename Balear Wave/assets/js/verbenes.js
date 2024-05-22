@@ -1,9 +1,7 @@
 // Función para procesar los datos del JSON y crear la estructura HTML de festivales
 function procesarVerbenes() {
     // Función interna para cargar y procesar el JSON
-    fetch('https://www.degresca.com/assets/json/verbenes.json', {
-        mode : 'no-cors'
-    })
+    fetch('https://www.degresca.com/assets/json/verbenes.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error('No se pudo cargar el JSON: ' + response.status);
@@ -12,7 +10,7 @@ function procesarVerbenes() {
         })
         .then(function (festes) {
             // Obtener el contenedor donde se agregarán los elementos
-            var contenedor = document.getElementById('festes-container');
+            var contenedor = document.getElementById('verbenes-container');
 
             // Iterar sobre cada festival en el JSON y crear la estructura HTML
             festes["itemListElement"].forEach(function(festa) {

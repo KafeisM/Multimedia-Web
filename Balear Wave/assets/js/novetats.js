@@ -36,7 +36,15 @@ function procesarJSON() {
                     // Crear fuente de video
                     var source = document.createElement('source');
                     source.src = article.video;
-                    source.type = 'video/mp4';
+                    
+                    // Detectar el tipo de archivo por la extensión
+                    if (article.video.endsWith('.mp4')) {
+                        source.type = 'video/mp4';
+                    } else if (article.video.endsWith('.webm')) {
+                        source.type = 'video/webm';
+                    } else {
+                        console.error('Formato de video no soportado');
+                    }
 
                     // Agregar fuente al video
                     mediaElement.appendChild(source);
