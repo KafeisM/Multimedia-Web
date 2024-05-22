@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
                 // Agregar un marcador en la ubicación obtenida con un icono personalizado
                 var ubicacionActualIcono = L.icon({
-                    iconUrl: 'assets/img/events/user-location.png', // Ruta a tu icono personalizado
+                    iconUrl: 'https://www.balearwave.com/assets/img/events/user-location.png', // Ruta a tu icono personalizado
                     iconSize: [32, 32], // Tamaño del icono
                     iconAnchor: [16, 32], // Punto de anclaje del icono
                     popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (latitud !== null && longitud !== null) {
                     // Agregar un marcador en la ubicación del evento
                     var iconoEvento = L.icon({
-                        iconUrl: 'assets/img/events/location.png', // Ruta al icono personalizado para eventos
+                        iconUrl: 'https://www.balearwave.com/assets/img/events/location.png', // Ruta al icono personalizado para eventos
                         iconSize: [32, 32], // Tamaño del icono
                         iconAnchor: [16, 32], // Punto de anclaje del icono
                         popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function generarListaEventos() {
         var contenedorPrincipal = document.getElementById('events-container');
 
-        fetch('assets/data/events.json')
+        fetch('https://www.balearwave.com/assets/data/events.json')
             .then(response => {
                 if (!response.ok) {
                     throw new Error('No se pudo cargar el JSON: ' + response.status);
@@ -172,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         selectGenero.addEventListener('change', function() {
             filtros.genero = selectGenero.value;
-            console.log("Genero Seleccionado: ", selectGenero.value);
             aplicarFiltros();
         });
     }
@@ -180,7 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function mostrarEventos(eventos, contenedorPrincipal) {
     contenedorPrincipal.innerHTML = '';
     eventos.forEach(function(evento) {
-        console.log("Evento:", evento.name);
 
         var divEvento = document.createElement('div');
         divEvento.classList.add('events-item');
@@ -224,7 +222,6 @@ document.addEventListener('DOMContentLoaded', () => {
         var btnFavorito = document.createElement('button');
         btnFavorito.classList.add('btn-favorite');
         if (favoritos.includes(evento.name)) {
-            console.log("EVENTO ACTIVO: ", evento.name);
             btnFavorito.classList.add('active');
         }
 
@@ -247,14 +244,6 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedorPrincipal.appendChild(divEvento);
         var hr = document.createElement('hr');
         contenedorPrincipal.appendChild(hr);
-
-        // Logs para los valores de los filtros
-        /*console.log("Filtros:");
-        console.log("Genero:", filtros.genero);
-        console.log("Precio:", filtros.precio);
-        console.log("Fecha Inicio:", filtros.fechaInicio);
-        console.log("Fecha Fin:", filtros.fechaFin);
-        console.log("Nombre:", filtros.nombre);*/
     });
 }
 
@@ -312,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return coincideGenero && coincidePrecio && coincideFecha && coincideNombre && coincideFavoritos;
         });
 
-        console.log("FILTRADOS: ", eventosFiltrados);
         mostrarEventos(eventosFiltrados, document.getElementById('events-container'));
     }
 
@@ -334,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     btnFavoritos.addEventListener('click', function() {
         this.classList.toggle('active');
-        console.log("FAVORITOS: ", favoritos);
         filtros.favoritos = this.classList.contains('active'); // Actualizar el filtro de favoritos
         aplicarFiltros();
     });
