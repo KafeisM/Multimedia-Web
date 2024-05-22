@@ -78,22 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Crear botón para añadir a favoritos
                         var favButton = document.createElement('button');
                         favButton.className = 'btn btn-fav ' + (localStorage.getItem(artist.name) ? 'btn-fav-added' : 'btn-fav-not-added');
-                        favButton.textContent = localStorage.getItem(artist.name) ? 'Eliminar de favoritos' : 'Añadir a favoritos';
+                        favButton.textContent = localStorage.getItem(artist.name) ? 'Deixar de seguir' : 'Seguir';
                         favButton.addEventListener('click', function() {
                             if (localStorage.getItem(artist.name)) {
                                 // Eliminar de favoritos
                                 localStorage.removeItem(artist.name);
-                                favButton.textContent = 'Añadir a favoritos';
+                                favButton.textContent = 'Seguir';
                                 favButton.classList.remove('btn-fav-added');
                                 favButton.classList.add('btn-fav-not-added');
-                                alert(`${artist.name} eliminado de favoritos`);
+                                alert(`${artist.name} deixat de seguir`);
                             } else {
                                 // Añadir a favoritos
                                 localStorage.setItem(artist.name, true);
-                                favButton.textContent = 'Eliminar de favoritos';
+                                favButton.textContent = 'Deixar de seguir';
                                 favButton.classList.remove('btn-fav-not-added');
                                 favButton.classList.add('btn-fav-added');
-                                alert(`${artist.name} añadido a favoritos`);
+                                alert(`Has començat a seguir a ${artist.name}`);
                             }
                         });
 
@@ -116,19 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function inicializarIsotope() {
-        let artistesContainer = document.querySelector('.artistes-container');
+    let artistesContainer = document.querySelector('.artistes-container');
+
+    if (artistesContainer) {
+        artistesIsotope = new Isotope(artistesContainer, {
+            itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
+            layoutMode: 'fitRows',
+            filter: '*' // Establece el filtro inicial como "todos"
+        });
     
-        if (artistesContainer) {
-            artistesIsotope = new Isotope(artistesContainer, {
-                itemSelector: '.col-md-4', // Selecciona el contenedor de cada artista
-                layoutMode: 'fitRows',
-                filter: '*' // Establece el filtro inicial como "todos"
-            });
-        
-            artistesContainer.style.height = '1500px'
-        }
+        artistesContainer.style.height = '1500px'
     }
-    
+}
+
 
     function configurarFiltros() {
         let artistesFilters = document.querySelectorAll('#artistes-flters li');
