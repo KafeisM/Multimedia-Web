@@ -178,77 +178,85 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function mostrarEventos(eventos, contenedorPrincipal) {
-        contenedorPrincipal.innerHTML = '';
-        eventos.forEach(function(evento) {
-            console.log("Evento:", evento.name);
+    contenedorPrincipal.innerHTML = '';
+    eventos.forEach(function(evento) {
+        console.log("Evento:", evento.name);
 
-            var divEvento = document.createElement('div');
-            divEvento.classList.add('events-item');
-            var imgEvento = document.createElement('img');
-            imgEvento.src = evento.image;
-            var divContenido = document.createElement('div');
-            divContenido.classList.add('events-content');
-            var tituloEvento = document.createElement('h3');
-            tituloEvento.textContent = evento.name;
-            var listaDetalles = document.createElement('ul');
-            var detalles = {
-                "Data": new Date(evento.startDate).toLocaleDateString(),
-                "Hora": new Date(evento.startDate).toLocaleTimeString(),
-                "Preu": evento.offers.price + " " + evento.offers.priceCurrency,
-                "Lloc": evento.location.name
-            };
+        var divEvento = document.createElement('div');
+        divEvento.classList.add('events-item');
+        var imgEvento = document.createElement('img');
+        imgEvento.src = evento.image;
+        var divContenido = document.createElement('div');
+        divContenido.classList.add('events-content');
+        var tituloEvento = document.createElement('h3');
+        tituloEvento.textContent = evento.name;
+        var listaDetalles = document.createElement('ul');
+        var detalles = {
+            "Data": new Date(evento.startDate).toLocaleDateString(),
+            "Hora": new Date(evento.startDate).toLocaleTimeString(),
+            "Preu": evento.offers.price + " " + evento.offers.priceCurrency,
+            "Lloc": evento.location.name
+        };
 
-            for (var key in detalles) {
-                if (detalles.hasOwnProperty(key)) {
-                    var li = document.createElement('li');
-                    var strong = document.createElement('strong');
-                    strong.textContent = key + ": ";
-                    var span = document.createElement('span');
-                    span.textContent = detalles[key];
-                    li.appendChild(strong);
-                    li.appendChild(span);
-                    listaDetalles.appendChild(li);
-                }
+        for (var key in detalles) {
+            if (detalles.hasOwnProperty(key)) {
+                var li = document.createElement('li');
+                var strong = document.createElement('strong');
+                strong.textContent = key + ": ";
+                var span = document.createElement('span');
+                span.textContent = detalles[key];
+                li.appendChild(strong);
+                li.appendChild(span);
+                listaDetalles.appendChild(li);
             }
+        }
 
-            var divBtnContainer = document.createElement('div');
-            divBtnContainer.classList.add('btn-container');
-            var btnEntradas = document.createElement('button');
-            btnEntradas.textContent = 'Entrades';
-            btnEntradas.classList.add('btn', 'btn-custom');
-            btnEntradas.addEventListener('click', function() {
-                window.location.href = evento.offers.url;
-            });
-
-            var btnFavorito = document.createElement('button');
-            btnFavorito.classList.add('btn-favorite');
-            if (favoritos.some(fav => fav.name === evento.name)) {
-                btnFavorito.classList.add('active');
-            }
-            btnFavorito.addEventListener('click', function() {
-                toggleFavorito(evento, btnFavorito);
-            });
-
-            divBtnContainer.appendChild(btnEntradas);
-            divBtnContainer.appendChild(btnFavorito);
-            divContenido.appendChild(tituloEvento);
-            divContenido.appendChild(listaDetalles);
-            divContenido.appendChild(divBtnContainer);
-            divEvento.appendChild(imgEvento);
-            divEvento.appendChild(divContenido);
-            contenedorPrincipal.appendChild(divEvento);
-            var hr = document.createElement('hr');
-            contenedorPrincipal.appendChild(hr);
-
-            // Logs para los valores de los filtros
-            console.log("Filtros:");
-            console.log("Genero:", filtros.genero);
-            console.log("Precio:", filtros.precio);
-            console.log("Fecha Inicio:", filtros.fechaInicio);
-            console.log("Fecha Fin:", filtros.fechaFin);
-            console.log("Nombre:", filtros.nombre);
+        var divBtnContainer = document.createElement('div');
+        divBtnContainer.classList.add('btn-container');
+        var btnEntradas = document.createElement('button');
+        btnEntradas.setAttribute('target', '_blank');
+        btnEntradas.textContent = 'Entrades';
+        btnEntradas.classList.add('btn', 'btn-custom');
+        btnEntradas.addEventListener('click', function() {
+            window.open(evento.offers.url, '_blank');
         });
-    }
+
+        var btnFavorito = document.createElement('button');
+        btnFavorito.classList.add('btn-favorite');
+        if (favoritos.includes(evento.name)) {
+            console.log("EVENTO ACTIVO: ", evento.name);
+            btnFavorito.classList.add('active');
+        }
+
+        btnFavorito.addEventListener('click', function() {
+            if (btnFavorito.classList.contains('active')){
+                btnFavorito.classList.remove('active');
+            } else {
+                btnFavorito.classList.toggle('active');
+            }
+            toggleFavorito(evento, btnFavorito);
+        });
+
+        divBtnContainer.appendChild(btnEntradas);
+        divBtnContainer.appendChild(btnFavorito);
+        divContenido.appendChild(tituloEvento);
+        divContenido.appendChild(listaDetalles);
+        divContenido.appendChild(divBtnContainer);
+        divEvento.appendChild(imgEvento);
+        divEvento.appendChild(divContenido);
+        contenedorPrincipal.appendChild(divEvento);
+        var hr = document.createElement('hr');
+        contenedorPrincipal.appendChild(hr);
+
+        // Logs para los valores de los filtros
+        /*console.log("Filtros:");
+        console.log("Genero:", filtros.genero);
+        console.log("Precio:", filtros.precio);
+        console.log("Fecha Inicio:", filtros.fechaInicio);
+        console.log("Fecha Fin:", filtros.fechaFin);
+        console.log("Nombre:", filtros.nombre);*/
+    });
+}
 
     function manejarFiltroPrecio() {
         var inputPrecio = document.getElementById('price-range');
@@ -308,25 +316,29 @@ document.addEventListener('DOMContentLoaded', () => {
         mostrarEventos(eventosFiltrados, document.getElementById('events-container'));
     }
 
-    function toggleFavorito(evento) {
-        var index = favoritos.indexOf(evento.name);
-        if (index > -1) {
-            favoritos.splice(index, 1);
+    function toggleFavorito(evento, btnFavorito) {
+        if (btnFavorito.classList.contains('active')) {
+            // Añadir a favoritos
+            if (!favoritos.some(fav => fav.name === evento.name)) {
+                favoritos.push(evento.name);
+            }
         } else {
-            favoritos.push(evento.name);
+            // Eliminar de favoritos
+            favoritos = favoritos.filter(fav => fav.name !== evento.name);
         }
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
     }
+
 
     var btnFavoritos = document.getElementById('fav-filter');
 
     btnFavoritos.addEventListener('click', function() {
         this.classList.toggle('active');
+        console.log("FAVORITOS: ", favoritos);
         filtros.favoritos = this.classList.contains('active'); // Actualizar el filtro de favoritos
         aplicarFiltros();
     });
 
     generarListaEventos();
-
-    
+  
 });

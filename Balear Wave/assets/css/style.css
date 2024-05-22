@@ -1703,7 +1703,7 @@ section .container {
   background: #18d26e; /* Fondo verde al pasar el cursor */
 }
 
-#fav-filter label.active {
+#fav-filter.active label {
   background: #18d26e; /* Fondo verde al pasar el cursor */
 }
 
@@ -1837,7 +1837,7 @@ section .container {
 .btn-favorite {
   width: 30px; /* Ajusta el tamaño del botón */
   height: 30px;
-  background-color: #a5e0c1; /* Fondo blanco por defecto */
+  background-color: #ffffff; /* Fondo blanco por defecto */
   clip-path: polygon(
       50% 0%, 61% 35%, 98% 35%, 
       68% 57%, 79% 91%, 50% 70%, 
@@ -1851,6 +1851,10 @@ section .container {
 .btn-favorite:hover {
   background-color: #35e888; /* Cambiar el color de fondo al pasar el mouse */
   color: #000000; /* Cambiar el color del texto al pasar el mouse */
+}
+
+.btn-favorite.active{
+  background-color: #15bb62;
 }
 
 
