@@ -1,10 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Botón de volver atrás
-    document.getElementById('back-button').addEventListener('click', function() {
-        window.location.href = 'index.html#festes';
-    
-    });
     
     // Obtener referencia al botón de mapa
     var botonMapa = document.querySelector('#boton-mapa-festes');
@@ -14,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Agregar un event listener al botón de mapa
     botonMapa.addEventListener('click', function() {
-        console.log("BOTO FESTES")
         toggleMapVisibility();
     });
 
@@ -74,9 +67,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Obtener las coordenadas de latitud y longitud de la fiesta
             var latitud = parseFloat(fiesta.geo.latitude);
             var longitud = parseFloat(fiesta.geo.longitude);
-
-            console.log("LAT: ", latitud)
-            console.log("LON: ", longitud)
     
             // Verificar si se obtuvieron las coordenadas
             if (!isNaN(latitud) && !isNaN(longitud)) {
