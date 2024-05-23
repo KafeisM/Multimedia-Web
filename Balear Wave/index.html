@@ -70,10 +70,11 @@
       </nav><!-- .navbar -->
   
       <div class="social-links">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="twitter" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+
       </div>
 
     </div>
@@ -96,8 +97,7 @@
           <ul id="events-filters">
             <!-- Otros filtros -->
             <li id="genre-filter" class="genre-filter">
-              <label for="genre-select">Gènere</label>
-              <select id="genre-select">
+              <label><select aria-label="genre-select"></select></label>
                 <option value="todos">Tots</option>
                 <option value="Música Úrbana">Música Úrbana</option>
                 <option value="Pop">Pop</option>
@@ -115,7 +115,7 @@
               <input type="date" id="date-input" name="start-date">
             </li>
             <li id="end-date-input" class="date-filter">
-                <label for="date-input"></label>
+                <label for="date-input-2"></label>
                 <input type="date" id="date-input-2" name="end-date">
             </li>
           
@@ -184,6 +184,7 @@
             <li data-filter=".filter-grups">Grups</li>
             <li data-filter=".filter-solistes">Solistes</li>
             <li id="favoritos-filter">Artistes Seguits</li>
+            <label for="genre-filters"></label>
             <select id="genre-flters">
               <option value="*">Tots els generes</option>
               <option value=".filter-rock">Rock</option>
@@ -296,13 +297,13 @@
         
       </div>
 
-      <script src="https://www.balearwave.com/assets/js/festivals.js"></script>
+      <!--<script src="https://www.balearwave.com/assets/js/festivals.js"></script>
       <script>
           document.addEventListener('DOMContentLoaded', () => {
               // Llamar a la función para cargar y procesar el JSON
               procesarFestivals();
           });
-      </script>
+      </script>-->
 
     </div>
   </section><!-- End Festival Section -->
@@ -363,13 +364,13 @@
         
       </div>
 
-      <script src="https://www.balearwave.com/assets/js/verbenes.js"></script>
+      <!--<script src="https://www.balearwave.com/assets/js/verbenes.js"></script>
       <script>
           document.addEventListener('DOMContentLoaded', () => {
               // Llamar a la función para cargar y procesar el JSON
               procesarVerbenes();
           });
-      </script>
+      </script>-->
 
     </div>
   </section><!-- End verbenes Section -->
@@ -527,11 +528,12 @@
             <i class="bx bx-share-alt"></i>
             <h3>Perfils socials</h3>
             <div class="social-links">
-              <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bi bi-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              <a href="#" class="twitter" aria-label="Síguenos en Twitter"><i class="bi bi-twitter"></i></a>
+              <a href="#" class="facebook" aria-label="Síguenos en Facebook"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="instagram" aria-label="Síguenos en Instagram"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="google-plus" aria-label="Síguenos en Google Plus"><i class="bi bi-skype"></i></a>
+              <a href="#" class="linkedin" aria-label="Síguenos en LinkedIn"><i class="bi bi-linkedin"></i></a>
+
             </div>
           </div>
         </div>
@@ -552,7 +554,7 @@
         </div>
       </div>
 
-      <form action="forms/contact.php" method="post" role="form" class="php-email-form mt-4">
+      <form action="forms/contact.php" method="post" class="php-email-form mt-4">
         <div class="row">
           <div class="col-md-6 form-group">
             <input type="text" name="name" class="form-control" id="name" placeholder="Nom" required>
