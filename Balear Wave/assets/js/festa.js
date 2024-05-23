@@ -160,7 +160,7 @@ const comentariosPorFiesta = {
       {
         "usuario": "Antoni Fuster",
         "comentario": "La festa de Sant Joan a Menorca és una experiència que realment encanta tothom. Les fogueres brillants, les tradicionals carreres de cavalls i la joia contagiosa creen un ambient festiu únic que et fa sentir part d'una cosa especial. És una celebració que deixa una empremta duradora al cor dels qui l'experimenten.",
-        "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-1.jpg"
+        "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-5.jpg"
       },
       {
         "usuario": "Miquel Pons",
@@ -208,7 +208,7 @@ const comentariosPorFiesta = {
         {
             "usuario": "Bartomeu Serra",
             "comentario": "Moros i Cristians és una representació acolorida i emocionant de la història i la cultura de Mallorca. Tot i que l'enfocament a la guerra pot resultar desafiant per a alguns, les desfilades i recreacions històriques són impressionants i ofereixen una visió fascinant del passat de l'illa.",
-            "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-1.jpg"
+            "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-4.jpg"
         },
         {
             "usuario": "Francisca Ordines",
@@ -232,7 +232,7 @@ const comentariosPorFiesta = {
         {
             "usuario": "Guillem Galmés",
             "comentario": "La Festa de Sant Martí en Es Mercadal es una celebración tradicional llena de encanto y hospitalidad. Aunque puede carecer de atracciones modernas, ofrece una visión auténtica de la vida en la isla y una oportunidad para conectarse con la comunidad local.",
-            "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-1.jpg"
+            "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-5.jpg"
         },
         {
             "usuario": "Aina Barceló",
@@ -256,7 +256,7 @@ const comentariosPorFiesta = {
         {
             "usuario": "Miquel Vidal",
             "comentario": "El Cosso es una fiesta que transporta a los visitantes a un mundo de fantasía y diversión. Aunque la saturación de turistas puede restarle algo de autenticidad, los desfiles y actividades ofrecen una experiencia mágica que deleita a toda la familia.",
-            "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-1.jpg"
+            "imagen": "https://www.balearwave.com/assets/img/testimonials/testimonials-4.jpg"
         },
         {
             "usuario": "Aina Pons",
