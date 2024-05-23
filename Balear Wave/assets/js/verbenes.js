@@ -13,14 +13,14 @@ function procesarVerbenes() {
             var contenedor = document.getElementById('verbenes-container');
 
             // Iterar sobre cada festival en el JSON y crear la estructura HTML
-            festes["itemListElement"].forEach(function(festa) {
+            festes.forEach(function(festa) {
                 // Crear div principal
                 var divFesta = document.createElement('div');
                 divFesta.classList.add('row');
 
                 // Suponiendo que `data` es el objeto JSON que contiene la lista `itemListElement`
                 // Accede a la URL de la imagen
-                const imageUrl = festa.image[0].url;
+                const imageUrl = 'https://www.degresca.com/' + festa.image[0].url;
 
                 // Crear el contenedor div con clase "col-lg-4" y atributo "data-aos"
                 const divContainer1 = document.createElement('div');
@@ -103,6 +103,7 @@ function procesarVerbenes() {
                 divContainer2.appendChild(h3Element);
                 divContainer2.appendChild(rowDiv);
                 divContainer2.appendChild(pElement);
+                divContainer2.appendChild(priceUlElement);
                 divContainer2.appendChild(aElement);
 
                 // Agregar divContainer1 como hijo de divFestival
