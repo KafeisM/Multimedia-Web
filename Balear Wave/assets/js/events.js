@@ -226,10 +226,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         btnFavorito.addEventListener('click', function() {
-            if (btnFavorito.classList.contains('active')){
+            if (btnFavorito.classList.contains('active')) {
                 btnFavorito.classList.remove('active');
             } else {
-                btnFavorito.classList.toggle('active');
+                btnFavorito.classList.add('active'); // Cambié toggle por add para asegurarnos de que siempre añade la clase
             }
             toggleFavorito(evento, btnFavorito);
         });
@@ -305,16 +305,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function toggleFavorito(evento, btnFavorito) {
+
         if (btnFavorito.classList.contains('active')) {
             // Añadir a favoritos
-            if (!favoritos.some(fav => fav.name === evento.name)) {
+            console.log('Añadiendo a favoritos:', evento.name);
+            if (!favoritos.some(fav => fav === evento.name)) {
                 favoritos.push(evento.name);
             }
         } else {
             // Eliminar de favoritos
-            favoritos = favoritos.filter(fav => fav.name !== evento.name);
+            console.log('Eliminando de favoritos:', evento.name);
+            favoritos = favoritos.filter(fav => fav !== evento.name);
         }
+        
+        // Actualizar el almacenamiento local
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    
+        // Imprimir la lista de favoritos en la consola
+        console.log('Lista de favoritos:', favoritos);
     }
 
 
