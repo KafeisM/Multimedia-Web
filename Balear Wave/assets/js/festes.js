@@ -158,7 +158,7 @@ function procesarFestes() {
                 const listItems = [
                     { iconClass: 'bi-calendar-event', label: 'Data inici:', value: festa.startDate },
                     { iconClass: 'bi-calendar-event', label: 'Data final:', value: festa.endDate },
-                    { iconClass: 'bi-geo-alt', label: 'Localització:', value: `${festa.address.addressLocality}, ${festa.address.addressRegion}, ${festa.address.postalCode}` }
+                    { iconClass: 'bi-geo-alt', label: 'Localització:', value: `${festa.location.address.addressLocality}, ${festa.location.address.addressRegion}, ${festa.location.address.postalCode}` }
                 ];
 
                 listItems.forEach(item => {
