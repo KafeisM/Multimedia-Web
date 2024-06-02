@@ -6,6 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Balear Wave</title>
+  <!-- Cargar el JSON-LD de un archivo externo -->
+  <script>
+    async function loadStructuredData() {
+      const response = await fetch('https://www.balearwave.com/assets/data/structured-data.json');
+      const data = await response.json();
+      const script = document.createElement('script');
+      script.type = 'application/ld+json';
+      script.text = JSON.stringify(data);
+      document.head.appendChild(script);
+    }
+    loadStructuredData();
+  </script>
   <meta name="description" content="Descobreix els artistes i les novetats del gènere musical de les Illes Balears. A més, descobreix les novetats de la setmana a les Balears. Estigues al dia amb els propers festivals, festes i revetles a les Balears.">
   <meta name="keywords" content="artistes, música, Illes Balears, festivals, festes, verbenes, concerts, events musicals, novetats locals, artistes locals, pop, rock, grups musicals, musica urbana, albums, favorits">
 

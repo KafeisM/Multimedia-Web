@@ -1,0 +1,179 @@
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Balear Wave",
+    "url": "https://www.balearwave.com",
+    "description": "Descobreix els artistes i les novetats del gènere musical de les Illes Balears. A més, descobreix les novetats de la setmana a les Balears. Estigues al dia amb els propers festivals, festes i revetles a les Balears.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.balearwave.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "mainEntity": [
+      {
+        "@type": "MusicGroup",
+        "name": "Xavibo",
+        "genre": "pop",
+        "type": "solista",
+        "image": "https://www.balearwave.com/assets/img/artistes/xavibo.jpg",
+        "description": "Xavibo és un raper conegut per les seves cançons emotives com “Fent Na”, “Que Triste”, “Plorar al reves” i “Cansat d'estar trist”. La seva música es caracteritza per representar emocions malenconioses i missatges intimistes. A més, ha guanyat popularitat a TikTok, on compta amb més de 80,000 seguidors.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Papel de burbujas",
+            "image": "https://www.balearwave.com/assets/img/artistes/papeldeburbujas.jpg",
+            "byArtist": "Xavibo",
+            "datePublished": "2023-09-13",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/24Xhdsa3kUc1BRa2iA9rO5?utm_source=generator&theme=0"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Marc Seguí",
+        "genre": "rock",
+        "type": "solista",
+        "image": "https://www.balearwave.com/assets/img/artistes/marc-segui-2-644a8c13cf626.jpg",
+        "description": "Marc Seguí és un cantant i compositor mallorquí que ha destacat a l'escena musical espanyola amb el seu estil pop i indie. És conegut per les seves lletres senzilles, melodies enganxoses i una veu distintiva. Va aconseguir gran popularitat amb el seu senzill “Tiroteo”, i la seva música sovint explora temes sentimentals.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Pinta y Colorea",
+            "image": "https://www.balearwave.com/assets/img/artistes/pintaycolorea.jpg",
+            "byArtist": "Marc Seguí",
+            "datePublished": "2021-11-26",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/2WfExJBJdOzCEKTksL9DuI?utm_source=generator&theme=0"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Desiire 3YF",
+        "genre": "pop",
+        "type": "solista",
+        "image": "https://www.balearwave.com/assets/img/artistes/desire.jpeg",
+        "description": "Desiire, de Muro, Mallorca, és una artista emergent que està irrompent a l'escena del rap amb lletres incisives i ritmes contundents. El seu estil únic incorpora influències del rap clàssic amb tocs de la vibrant cultura musical mallorquina. Amb el primer senzill, Desiire demostra la seva habilitat per narrar històries urbanes.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "En Ruinas",
+            "image": "https://www.balearwave.com/assets/img/artistes/enruinas.jpg",
+            "byArtist": "Desiire",
+            "datePublished": "2022-05-26",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/7xYSPt2mC76YdAq3RZxLWQ?utm_source=generator&theme=0"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Antònia Font",
+        "genre": "rock",
+        "type": "grupo",
+        "image": "https://www.balearwave.com/assets/img/artistes/antonia-font.jpg",
+        "description": "Antònia Font és un grup musical de Mallorca format el 1997. La seva música es distingeix pel seu estil pop amb lletres que abasten temàtiques com la ciència ficció i la vida a Mallorca, creant atmosferes oníriques i personals. El grup és conegut per la seva diversitat temàtica i el seu enfocament únic en la composició de cançons.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Un minut estroboscòpica",
+            "image": "https://www.balearwave.com/assets/img/artistes/unminut.jpg",
+            "byArtist": "Antònia Font",
+            "datePublished": "2022-03-25",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/58a2p346V0Bs2SWDb6W9Ct?utm_source=generator&theme=0"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Rels B",
+        "genre": "pop",
+        "type": "solista",
+        "image": "https://www.balearwave.com/assets/img/artistes/rels-b.jpg",
+        "description": "Rels B, el nom real del qual és Daniel Heredia Vidal, és un cantant, compositor i productor musical espanyol. Es destaca en gèneres com el rhythm and blues, dancehall, pop llatí, hip hop i reguetó. Conegut per la seva versatilitat i les seves produccions musicals independents, Rels B ha construït una sòlida base de seguidors gràcies a la seva autenticitat i el seu enfocament innovador.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "AfroLOVA'23",
+            "image": "https://www.balearwave.com/assets/img/artistes/afrolova.jpg",
+            "byArtist": "Rels B",
+            "datePublished": "2023-05-05",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/2gltrxGFFP1jFh3BHW3jM3?utm_source=generator&theme=0"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Maria Hein",
+        "genre": "pop",
+        "type": "solista",
+        "image": "https://www.balearwave.com/assets/img/artistes/mariahein.jpg",
+        "description": "Maria Hein és una cantant mallorquina que ha captivat audiències amb la seva veu suau i melodies delicades. La seva música sovint explora temes de la vida quotidiana amb una sensibilitat especial, creant una connexió íntima amb els oients. Maria Hein és coneguda per la seva autenticitat i l'honestedat emocional de les seves interpretacions.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Continent i contingut",
+            "image": "https://www.balearwave.com/assets/img/artistes/continent.jpg",
+            "byArtist": "Maria Hein",
+            "datePublished": "2021-10-29",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/0FHeUoWxDlNDnF3UUBHzW6?utm_source=generator&theme=0"
+          }
+        ]
+      },
+      {
+        "@type": "MusicGroup",
+        "name": "Alanaire",
+        "genre": "rock",
+        "type": "grupo",
+        "image": "https://www.balearwave.com/assets/img/artistes/alanaire.jpg",
+        "description": "Alanaire és una banda de pop rock en català que ha anat guanyant popularitat a les Illes Balears. Amb lletres introspectives i melodies vibrants, el seu estil musical ressona amb una audiència àmplia i diversa. La banda es caracteritza per la seva energia en viu i la seva capacitat per transmetre emocions profundes a través de la seva música.",
+        "album": [
+          {
+            "@type": "MusicAlbum",
+            "name": "Tot és més senzill",
+            "image": "https://www.balearwave.com/assets/img/artistes/totesmes.jpg",
+            "byArtist": "Alanaire",
+            "datePublished": "2023-04-14",
+            "spotifyAlbumLink": "https://open.spotify.com/embed/album/0Xo7ctO7KebGTTdqfJmX2H?utm_source=generator&theme=0"
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "@type": "Event",
+        "name": "Concert de Xavibo",
+        "startDate": "2024-07-15T20:00:00",
+        "location": {
+          "@type": "Place",
+          "name": "Teatre Principal de Palma",
+          "address": "Carrer de la Riera, 2, 07003 Palma, Illes Balears"
+        },
+        "image": "https://www.balearwave.com/assets/img/events/xavibo_concert.jpg",
+        "description": "Gaudeix del concert en viu de Xavibo presentant el seu àlbum 'Papel de burbujas' al Teatre Principal de Palma."
+      },
+      {
+        "@type": "Event",
+        "name": "Festival de Música Indie",
+        "startDate": "2024-08-20T18:00:00",
+        "location": {
+          "@type": "Place",
+          "name": "Parc de la Mar",
+          "address": "Parc de la Mar, 07001 Palma, Illes Balears"
+        },
+        "image": "https://www.balearwave.com/assets/img/events/indie_festival.jpg",
+        "description": "Un festival de música indie amb la participació de diversos artistes locals i nacionals."
+      },
+      {
+        "@type": "Event",
+        "name": "Revetla de Sant Joan",
+        "startDate": "2024-06-23T21:00:00",
+        "location": {
+          "@type": "Place",
+          "name": "Platja de Palma",
+          "address": "Platja de Palma, 07610 Palma, Illes Balears"
+        },
+        "image": "https://www.balearwave.com/assets/img/events/revetla_sant_joan.jpg",
+        "description": "Celebra la màgica nit de Sant Joan a la Platja de Palma amb fogueres, música en viu i molta diversió."
+      }
+    ]
+  }
+  
