@@ -28,11 +28,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Solicitar la ubicación del usuario
             navigator.geolocation.getCurrentPosition(function(position) {
                 // Obtener las coordenadas de latitud y longitud
-                var latitude = position.coords.latitude;
-                var longitude = position.coords.longitude;
+                var latitud = position.coords.latitude;
+                var longitud = position.coords.longitude;
 
                 // Crear un mapa con Leaflet y establecer el centro en la ubicación obtenida
-                var map = L.map('mapa-interno-festes').setView([latitude, longitude], 10);
+                var map = L.map('mapa-interno-festes').setView([latitud, longitud], 10);
 
                 // Agregar la capa de OpenStreetMap al mapa
                 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -46,11 +46,11 @@ document.addEventListener('DOMContentLoaded', function() {
                     iconAnchor: [16, 32], // Punto de anclaje del icono
                     popupAnchor: [0, -32] // Punto donde se abrirá el popup del marcador
                 });
-                L.marker([latitude, longitude], { icon: ubicacionActualIcono }).addTo(map)
+                L.marker([latitud, longitud], { icon: ubicacionActualIcono }).addTo(map)
                     .bindPopup('Tu ubicación actual').openPopup();
 
                 // Marcar ubicaciones de eventos en el mapa
-                marcarUbicacionesFiestas(map, latitude, longitude);
+                marcarUbicacionesFiestas(map, latitud, longitud);
             }, function(error) {
                 // Manejar errores de geolocalización
                 console.error('Error obteniendo la ubicación:', error);
@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
         // Iterar sobre cada fiesta y marcar su ubicación en el mapa
         todasLasFiestas.forEach(function(fiesta) {
             // Obtener las coordenadas de latitud y longitud de la fiesta
-            var latitud = parseFloat(fiesta.geo.latitude);
-            var longitud = parseFloat(fiesta.geo.longitude);
+            var latitud = parseFloat(fiesta.location.geo.latitude);
+            var longitud = parseFloat(fiesta.location.geo.longitude);
     
             // Verificar si se obtuvieron las coordenadas
             if (!isNaN(latitud) && !isNaN(longitud)) {
