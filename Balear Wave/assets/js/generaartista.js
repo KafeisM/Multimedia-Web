@@ -33,9 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
 
                         var typeClass = '';
-                        if (artist.type === 'solista') {
+                        var artistType = artist.additionalProperty.value;
+                        console.log(artistType)
+                        if (artistType  === 'solista') {
                             typeClass = 'filter-solistes';
-                        } else if (artist.type === 'grupo') {
+                        } else if (artistType  === 'grupo') {
                             typeClass = 'filter-grups';
                         }
 
